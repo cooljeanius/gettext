@@ -1,0 +1,63 @@
+#                                               -*- Autoconf -*-
+# Process this file with autoconf to produce a configure script.
+
+AC_PREREQ([2.69])
+AC_INIT([FULL-PACKAGE-NAME], [VERSION], [BUG-REPORT-ADDRESS])
+AC_CONFIG_SRCDIR([hello-c++-kde/hello.cc])
+AC_CONFIG_HEADERS([config.h])
+
+# Checks for programs.
+AC_PROG_CXX
+AC_PROG_CC
+AC_PROG_CPP
+AC_PROG_INSTALL
+AC_PROG_LN_S
+AC_PROG_MAKE_SET
+AC_PROG_OBJC
+AC_PROG_RANLIB
+
+# Checks for libraries.
+
+# Checks for header files.
+AC_CHECK_HEADERS([stdlib.h unistd.h])
+
+# Checks for typedefs, structures, and compiler characteristics.
+AC_CHECK_HEADER_STDBOOL
+
+# Checks for library functions.
+AC_CHECK_FUNCS([setenv])
+
+AC_CONFIG_FILES([Makefile
+                 hello-c++-kde/Makefile
+                 hello-c++-kde/m4/Makefile
+                 hello-objc-gnustep/GNUmakefile
+                 hello-objc-gnustep/po/GNUmakefile
+                 po/Makefile])
+AC_CONFIG_SUBDIRS([hello-c
+                   hello-c++
+                   hello-c++-gnome
+                   hello-c++-qt
+                   hello-c++-wxwidgets
+                   hello-c-gnome
+                   hello-clisp
+                   hello-csharp
+                   hello-csharp-forms
+                   hello-gawk
+                   hello-guile
+                   hello-java
+                   hello-java-awt
+                   hello-java-qtjambi
+                   hello-java-swing
+                   hello-librep
+                   hello-objc
+                   hello-objc-gnome
+                   hello-pascal
+                   hello-perl
+                   hello-php
+                   hello-python
+                   hello-sh
+                   hello-smalltalk
+                   hello-tcl
+                   hello-tcl-tk
+                   hello-ycp])
+AC_OUTPUT

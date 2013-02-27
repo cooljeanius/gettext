@@ -1,0 +1,12 @@
+remove-potcdate.sed
+*.insert-header
+*.stackdump
+core
+core.* 
+*.lo
+*.o
+stamp-*
+gettext.po
+gettext.1po
+gettext.2po
+*.new.po
