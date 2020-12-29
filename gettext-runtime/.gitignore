@@ -6,3 +6,15 @@ man/x-to-1
 po/Makefile.in
 po/POTFILES
 src/gettext.sh
+intl/libintl.h
+intl/libgnuintl.h
+libasprintf/autosprintf.h
+man/gettext.1
+man/gettext.1.html
+man/ngettext.1
+man/ngettext.1.html
+*/.libs/*
+src/envsubst
+src/gettext
+src/ngettext
+tests/test-lock
