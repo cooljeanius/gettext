@@ -248,19 +248,19 @@ func_fatal_error ()
 srcdir=`pwd`
 # The current directory is now $srcdir.
 
-# Check integrity of package: A configure.in/ac must be present. Sets variable
-# - configure_in    name of configure.in/ac file.
-if test -f configure.in; then
-  configure_in=configure.in
+# Check integrity of package: A configure.ac/in must be present. Sets variable
+# - configure_ac    name of configure.ac/in file.
+if test -f configure.ac; then
+  configure_ac=configure.ac
 else
-  if test -f configure.ac; then
-    configure_in=configure.ac
+  if test -f configure.in; then
+    configure_ac=configure.in
   else
     # KDE specific convention: configure.in.in
     if test -f configure.in.in; then
-      configure_in=configure.in.in
+      configure_ac=configure.in.in
     else
-      func_fatal_error "Missing configure.in or configure.ac, please cd to your package first."
+      func_fatal_error "Missing configure.ac or configure.in, please cd to your package first."
     fi
   fi
 fi
@@ -269,7 +269,7 @@ fi
 # At least one of the two must be given. If both are given, they must agree.
 sed_extract_AM_GNU_GETTEXT_VERSION_argument='s/^AM_GNU_GETTEXT_VERSION(\([^()]*\)).*$/\1/'
 sed_remove_outer_brackets='s/^\[\(.*\)\]$/\1/'
-xver=`cat "$configure_in" | grep '^AM_GNU_GETTEXT_VERSION(' | sed -n -e "$sed_extract_AM_GNU_GETTEXT_VERSION_argument"p | sed -e "$sed_remove_outer_brackets" | sed -e 1q`
+xver=`cat "$configure_ac" | grep '^AM_GNU_GETTEXT_VERSION(' | sed -n -e "$sed_extract_AM_GNU_GETTEXT_VERSION_argument"p | sed -e "$sed_remove_outer_brackets" | sed -e 1q`
 if test -z "$xver" && test -f intl/VERSION; then
   xver=`cat intl/VERSION | LC_ALL=C sed -n -e 's/^.*gettext-\([-+_.0-9A-Za-z]*\).*$/\1/p'`
 fi
@@ -283,7 +283,7 @@ if test -n "$xver"; then
   fi
 else
   if test -z "$ver"; then
-    func_fatal_error "Missing version: please specify in $configure_in through a line 'AM_GNU_GETTEXT_VERSION(x.yy.zz)' the gettext version the package is using"
+    func_fatal_error "Missing version: please specify in $configure_ac through a line 'AM_GNU_GETTEXT_VERSION(x.yy.zz)' the gettext version the package is using"
   fi
 fi
 
@@ -300,14 +300,14 @@ case "$ver" in
   0.18 | 0.18.1 | 0.18.2 )
     ;;
   *)
-    func_fatal_error "The AM_GNU_GETTEXT_VERSION declaration in your $configure_in
+    func_fatal_error "The AM_GNU_GETTEXT_VERSION declaration in your $configure_ac
                file requires the infrastructure from gettext-$ver but this version
                is older. Please upgrade to gettext-$ver or newer."
     ;;
 esac
 
 # Check in which directory config.rpath, mkinstalldirs etc. belong.
-auxdir=`cat "$configure_in" | grep '^AC_CONFIG_AUX_DIR' | sed -n -e 's/AC_CONFIG_AUX_DIR(\([^()]*\))/\1/p' | sed -e 's/^\[\(.*\)\]$/\1/' | sed -e 1q`
+auxdir=`cat "$configure_ac" | grep '^AC_CONFIG_AUX_DIR' | sed -n -e 's/AC_CONFIG_AUX_DIR(\([^()]*\))/\1/p' | sed -e 's/^\[\(.*\)\]$/\1/' | sed -e 1q`
 if test -n "$auxdir"; then
   auxdir="$auxdir/"
 fi
@@ -334,7 +334,7 @@ if test -f Makefile.am; then
 fi
 
 # Check whether to omit the intl/ directory.
-omitintl=`cat "$configure_in" | grep '^AM_GNU_GETTEXT' | sed -n -e 's/^AM_GNU_GETTEXT(\([^(),]*\).*$/\1/p' | sed -e 's/^\[\(.*\)\]$/\1/' | sed -e 1q`
+omitintl=`cat "$configure_ac" | grep '^AM_GNU_GETTEXT' | sed -n -e 's/^AM_GNU_GETTEXT(\([^(),]*\).*$/\1/p' | sed -e 's/^\[\(.*\)\]$/\1/' | sed -e 1q`
 omitintl=`if test 'external' = "$omitintl"; then echo yes; fi`
 
 # Check in which directory or directories the po/* infrastructure belongs.
@@ -352,7 +352,7 @@ s, dnl .*$,,
   :b
   s,^.*AC_CONFIG_FILES([[ ]*\([^]"$`\\)]*\).*$,\1,p
 }'
-configfiles=`cat "$configure_in" | sed -n -e "$sed_extract_config_files"`
+configfiles=`cat "$configure_ac" | sed -n -e "$sed_extract_config_files"`
 # PO directories have a Makefile.in generated from Makefile.in.in.
 # Treat a directory as a PO directory if and only if it has a
 # POTFILES.in file. This allows packages to have multiple PO
