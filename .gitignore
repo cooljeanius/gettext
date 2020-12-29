@@ -21,3 +21,6 @@ stamp-*
 confdefs.h
 conftest*
 .dirstamp
+Makefile
+csharpcomp.sh
+javacomp.sh
