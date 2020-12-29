@@ -24,3 +24,5 @@ conftest*
 Makefile
 csharpcomp.sh
 javacomp.sh
+po/Makefile.in
+po/POTFILES

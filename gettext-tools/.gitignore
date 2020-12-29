@@ -1,0 +1,15 @@
+Makefile
+csharpexec.sh
+javaexec.sh
+libtool
+po/Makefile.in
+po/POTFILES
+examples/installpaths
+intl/ChangeLog.inst
+intl/VERSION
+libgettextpo/exported.sh
+man/x-to-1
+misc/autopoint
+misc/convert-archive
+misc/gettextize
+src/user-email

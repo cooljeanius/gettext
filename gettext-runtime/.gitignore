@@ -1,3 +1,8 @@
 Makefile
 csharpcomp.sh
 javacomp.sh
+libtool
+man/x-to-1
+po/Makefile.in
+po/POTFILES
+src/gettext.sh
