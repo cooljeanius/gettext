@@ -1,7 +1,7 @@
 #                                               -*- Autoconf -*-
 # Process this file with autoconf to produce a configure script.
 
-AC_PREREQ([2.69])
+AC_PREREQ([2.70])
 AC_INIT([FULL-PACKAGE-NAME], [VERSION], [BUG-REPORT-ADDRESS])
 AC_CONFIG_SRCDIR([config.h.in])
 AC_CONFIG_HEADERS([config.h])
@@ -18,17 +18,17 @@ AC_PROG_MAKE_SET
 AC_PROG_RANLIB
 
 # Checks for libraries.
-# FIXME: Replace `main' with a function in `-lgcc':
+# FIXME: Replace 'main' with a function in '-lgcc':
 AC_CHECK_LIB([gcc], [main])
-# FIXME: Replace `main' with a function in `-liberty':
+# FIXME: Replace 'main' with a function in '-liberty':
 AC_CHECK_LIB([iberty], [main])
-# FIXME: Replace `main' with a function in `-liconv':
+# FIXME: Replace 'main' with a function in '-liconv':
 AC_CHECK_LIB([iconv], [main])
 
 # Checks for header files.
 AC_FUNC_ALLOCA
 AC_HEADER_RESOLV
-AC_CHECK_HEADERS([OS.h arpa/inet.h fcntl.h float.h libintl.h limits.h locale.h malloc.h netdb.h netinet/in.h stddef.h stdint.h stdlib.h string.h strings.h sys/socket.h sys/time.h unistd.h])
+AC_CHECK_HEADERS([OS.h arpa/inet.h fcntl.h libintl.h malloc.h netdb.h netinet/in.h stdint.h strings.h sys/socket.h sys/time.h unistd.h])
 
 # Checks for typedefs, structures, and compiler characteristics.
 AC_CHECK_HEADER_STDBOOL

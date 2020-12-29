@@ -16,7 +16,7 @@
 
 ## Process this file with automake to produce Makefile.in.
 
-AUTOMAKE_OPTIONS = 1.2 foreign
+AUTOMAKE_OPTIONS = 1.2 foreign silent-rules
 ACLOCAL = ../../build-aux/fixaclocal @ACLOCAL@
 ACLOCAL_AMFLAGS = -I ../../gettext-runtime/m4 -I ../../m4
 SUBDIRS = po

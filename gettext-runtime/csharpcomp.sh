@@ -132,7 +132,7 @@ if test -n ""; then
   test -z "$CSHARP_VERBOSE" || echo cscc $options_cscc $sources
   exec cscc $options_cscc $sources
 else
-  if test -n ""; then
+  if test -n "1"; then
     # mcs prints it errors and warnings to stdout, not stderr. Furthermore it
     # adds a useless line "Compilation succeeded..." at the end. Correct both.
     sed_drop_success_line='${

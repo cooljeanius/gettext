@@ -35,7 +35,7 @@ top_builddir = ..
 #    files it finds in srcdir = ../../gettext-runtime/intl.
 
 
-prefix = /Users/egall/usr/local
+prefix = /usr/local
 exec_prefix = ${prefix}
 transform = s,x,x,
 libdir = ${exec_prefix}/lib
@@ -53,19 +53,19 @@ INSTALL_DATA = ${INSTALL} -m 644
 # We use $(mkdir_p).
 # In automake <= 1.9.x, $(mkdir_p) is defined either as "mkdir -p --" or as
 # "$(mkinstalldirs)" or as "$(install_sh) -d". For these automake versions,
-# ${SHELL} /Users/egall/Downloads/gettext-0.18.2/build-aux/install-sh does not start with $(SHELL), so we add it.
+# ${SHELL} /Users/ericgallager/Documents/GitHub/gettext/build-aux/install-sh does not start with $(SHELL), so we add it.
 # In automake >= 1.10, $(MKDIR_P) is derived from ${MKDIR_P}, which is defined
 # either as "/path/to/mkdir -p" or ".../install-sh -c -d". For these automake
 # versions, $(mkinstalldirs) and $(install_sh) are unused.
-mkinstalldirs = $(SHELL) ${SHELL} /Users/egall/Downloads/gettext-0.18.2/build-aux/install-sh -d
-install_sh = $(SHELL) ${SHELL} /Users/egall/Downloads/gettext-0.18.2/build-aux/install-sh
-MKDIR_P = ../../build-aux/install-sh -c -d
+mkinstalldirs = $(SHELL) ${SHELL} /Users/ericgallager/Documents/GitHub/gettext/build-aux/install-sh -d
+install_sh = $(SHELL) ${SHELL} /Users/ericgallager/Documents/GitHub/gettext/build-aux/install-sh
+MKDIR_P = /opt/local/bin/gmkdir -p
 mkdir_p = $(MKDIR_P)
 
 l = l
 
 AR = ar
-CC = gcc -std=gnu99
+CC = gcc
 LIBTOOL = $(SHELL) $(top_builddir)/libtool
 RANLIB = ranlib
 YACC = bison -y -d
@@ -103,9 +103,9 @@ DEFS = -DLOCALEDIR=\"$(localedir)\" -DLOCALE_ALIAS_PATH=\"$(aliaspath)\" \
 -Dset_relocation_prefix=libintl_set_relocation_prefix \
 -Drelocate=libintl_relocate \
 -DDEPENDS_ON_LIBICONV=1 -DHAVE_CONFIG_H
-CPPFLAGS = -I/Users/egall/usr/include -I/Users/egall/usr/include/c++/4.2.1
+CPPFLAGS = 
 CFLAGS = -g -O2 -fvisibility=hidden
-LDFLAGS = -L/Users/egall/usr/lib $(LDFLAGS_no)
+LDFLAGS =  $(LDFLAGS_no)
 LDFLAGS_yes = -Wl,--export-all-symbols
 LDFLAGS_no =
 LIBS = -lpthread -liconv -lc 
@@ -219,7 +219,7 @@ libintl.a libgnuintl.a: $(OBJECTS)
 libintl.la libgnuintl.la: $(OBJECTS) $(OBJECTS_RES_no)
 	$(AM_V_GEN)$(LIBTOOL) $(AM_V_lt) --tag=CC --mode=link \
 	  $(CC) $(CPPFLAGS) $(CFLAGS) $(XCFLAGS) $(LDFLAGS) -o $@ \
-	  $(OBJECTS)   $(LIBS)  -lc \
+	  $(OBJECTS)  -Wl,-framework -Wl,CoreFoundation $(LIBS)  -lc \
 	  $(OBJECTS_RES_no) \
 	  -version-info $(LTV_CURRENT):$(LTV_REVISION):$(LTV_AGE) \
 	  -rpath $(libdir) \
@@ -368,7 +368,7 @@ libintl.h: $(srcdir)/libgnuintl.in.h
 	  < $(srcdir)/libgnuintl.in.h > libintl.h
 
 charset.alias: $(srcdir)/config.charset
-	$(SHELL) $(srcdir)/config.charset 'x86_64-apple-darwin11.4.2' > t-$@
+	$(SHELL) $(srcdir)/config.charset 'x86_64-apple-darwin19.6.0' > t-$@
 	mv t-$@ $@
 
 check: all
@@ -410,7 +410,7 @@ install-exec: all
 	fi
 	if test 'yes' = yes; then \
 	  if test no = no; then \
-	    case 'darwin11.4.2' in \
+	    case 'darwin19.6.0' in \
 	      darwin[56]*) \
 	        need_charset_alias=true ;; \
 	      darwin* | cygwin* | mingw* | pw32* | cegcc*) \
@@ -496,7 +496,7 @@ installdirs:
 	fi
 	if test 'yes' = yes; then \
 	  if test no = no; then \
-	    case 'darwin11.4.2' in \
+	    case 'darwin19.6.0' in \
 	      darwin[56]*) \
 	        need_charset_alias=true ;; \
 	      darwin* | cygwin* | mingw* | pw32* | cegcc*) \

@@ -16,9 +16,9 @@
 
 ## Process this file with automake to produce Makefile.in.
 
-AUTOMAKE_OPTIONS = 1.5 gnu no-dependencies
+AUTOMAKE_OPTIONS = 1.5 gnu no-dependencies silent-rules
 ACLOCAL = build-aux/fixaclocal @ACLOCAL@
-ACLOCAL_AMFLAGS = -I m4
+ACLOCAL_AMFLAGS = -I m4 --install
 
 SUBDIRS = gnulib-local gettext-runtime gettext-tools po
 

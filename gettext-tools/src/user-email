@@ -17,7 +17,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 # Prerequisites for using ${exec_prefix}/lib and ${datarootdir}/locale.
-prefix="/Users/egall/usr/local"
+prefix="/usr/local"
 exec_prefix="${prefix}"
 datarootdir="${prefix}/share"
 datadir="${datarootdir}"

@@ -16,14 +16,14 @@ dnl along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 dnl Process this file with autoconf to produce a configure script.
 
-AC_PREREQ([2.59])
-AC_INIT([gettext-runtime], [0.18.2])
+AC_PREREQ([2.70])
+AC_INIT([gettext-runtime],[0.18.2])
 AC_CONFIG_SRCDIR([intl/dcigettext.c])
 AC_CONFIG_AUX_DIR([../build-aux])
 AC_CONFIG_MACRO_DIR([m4])
-. $srcdir/../version.sh
-gl_INIT_PACKAGE([gettext-runtime], [$VERSION_NUMBER])
-AM_INIT_AUTOMAKE([silent-rules])
+. ${srcdir}/../version.sh
+gl_INIT_PACKAGE([gettext-runtime],[${VERSION_NUMBER}])
+AM_INIT_AUTOMAKE([1.5 gnu no-dependencies silent-rules subdir-objects])
 AC_CONFIG_HEADERS([config.h])
 AM_MAINTAINER_MODE
 AC_USE_SYSTEM_EXTENSIONS

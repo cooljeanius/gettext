@@ -1,7 +1,7 @@
 #                                               -*- Autoconf -*-
 # Process this file with autoconf to produce a configure script.
 
-AC_PREREQ([2.69])
+AC_PREREQ([2.70])
 AC_INIT([FULL-PACKAGE-NAME], [VERSION], [BUG-REPORT-ADDRESS])
 AC_CONFIG_SRCDIR([config.h.in])
 AC_CONFIG_HEADERS([config.h])
@@ -15,17 +15,17 @@ AC_PROG_RANLIB
 AC_PROG_MKDIR_P
 
 # Checks for libraries.
-# FIXME: Replace `main' with a function in `-lc':
+# FIXME: Replace 'main' with a function in '-lc':
 AC_CHECK_LIB([c], [main])
-# FIXME: Replace `main' with a function in `-liconv':
+# FIXME: Replace 'main' with a function in '-liconv':
 AC_CHECK_LIB([iconv], [main])
-# FIXME: Replace `main' with a function in `-lpthread':
+# FIXME: Replace 'main' with a function in '-lpthread':
 AC_CHECK_LIB([pthread], [main])
 
 # Checks for header files.
 AC_FUNC_ALLOCA
 AC_HEADER_RESOLV
-AC_CHECK_HEADERS([OS.h arpa/inet.h fcntl.h float.h inttypes.h langinfo.h libintl.h limits.h locale.h malloc.h netdb.h netinet/in.h paths.h stddef.h stdint.h stdlib.h string.h strings.h sys/acl.h sys/param.h sys/socket.h sys/time.h sys/timeb.h unistd.h utime.h wchar.h wctype.h])
+AC_CHECK_HEADERS([OS.h arpa/inet.h fcntl.h inttypes.h langinfo.h libintl.h malloc.h netdb.h netinet/in.h paths.h stdint.h strings.h sys/acl.h sys/param.h sys/socket.h sys/time.h sys/timeb.h unistd.h utime.h])
 
 # Checks for typedefs, structures, and compiler characteristics.
 AC_CHECK_HEADER_STDBOOL

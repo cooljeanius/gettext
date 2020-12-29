@@ -1,4 +1,4 @@
-prefix='/Users/egall/usr/local'
+prefix='/usr/local'
 exec_prefix="${prefix}"
 datarootdir="${prefix}/share"
 datadir="${datarootdir}"

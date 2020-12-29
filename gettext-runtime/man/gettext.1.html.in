@@ -1,4 +1,4 @@
-<!-- Creator     : groff version 1.21 -->
+<!-- Creator     : groff version 1.19.2 -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -7,17 +7,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
 <meta name="Content-Style" content="text/css">
 <style type="text/css">
-       p       { margin-top: 0; margin-bottom: 0; vertical-align: top }
-       pre     { margin-top: 0; margin-bottom: 0; vertical-align: top }
-       table   { margin-top: 0; margin-bottom: 0; vertical-align: top }
-       h1      { text-align: center }
+       p     { margin-top: 0; margin-bottom: 0; }
+       pre   { margin-top: 0; margin-bottom: 0; }
+       table { margin-top: 0; margin-bottom: 0; }
 </style>
 <title>GETTEXT</title>
 
 </head>
 <body>
 
-<h1 align="center">GETTEXT</h1>
+<h1 align=center>GETTEXT</h1>
 
 <a href="#NAME">NAME</a><br>
 <a href="#SYNOPSIS">SYNOPSIS</a><br>
@@ -30,26 +29,23 @@
 <hr>
 
 
-<h2>NAME
 <a name="NAME"></a>
-</h2>
+<h2>NAME</h2>
 
 
 <p style="margin-left:11%; margin-top: 1em">gettext &minus;
 translate message</p>
 
-<h2>SYNOPSIS
 <a name="SYNOPSIS"></a>
-</h2>
+<h2>SYNOPSIS</h2>
 
 
 <p style="margin-left:11%; margin-top: 1em"><b>gettext</b>
 [<i>OPTION</i>] [[<i>TEXTDOMAIN</i>] <i>MSGID</i>] <b><br>
 gettext</b> [<i>OPTION</i>] <i>-s</i> [<i>MSGID</i>]...</p>
 
-<h2>DESCRIPTION
 <a name="DESCRIPTION"></a>
-</h2>
+<h2>DESCRIPTION</h2>
 
 
 <p style="margin-left:11%; margin-top: 1em">The
@@ -65,34 +61,38 @@ language translation of a textual message. <b><br>
 <p style="margin-left:22%;">retrieve translated messages
 from TEXTDOMAIN</p>
 
-<table width="100%" border="0" rules="none" frame="void"
+<table width="100%" border=0 rules="none" frame="void"
        cellspacing="0" cellpadding="0">
 <tr valign="top" align="left">
 <td width="11%"></td>
 <td width="3%">
 
 
-<p><b>&minus;e</b></p></td>
+
+<p style="margin-top: 1em" valign="top"><b>&minus;e</b></p> </td>
 <td width="8%"></td>
 <td width="63%">
 
 
-<p>enable expansion of some escape sequences</p></td>
+<p style="margin-top: 1em" valign="top">enable expansion of
+some escape sequences</p></td>
 <td width="15%">
-</td></tr>
+</td>
 <tr valign="top" align="left">
 <td width="11%"></td>
 <td width="3%">
 
 
-<p><b>&minus;E</b></p></td>
+
+<p style="margin-top: 1em" valign="top"><b>&minus;E</b></p> </td>
 <td width="8%"></td>
 <td width="63%">
 
 
-<p>(ignored for compatibility)</p></td>
+<p style="margin-top: 1em" valign="top">(ignored for
+compatibility)</p> </td>
 <td width="15%">
-</td></tr>
+</td>
 </table>
 
 <p style="margin-left:11%;"><b>&minus;h</b>,
@@ -100,21 +100,23 @@ from TEXTDOMAIN</p>
 
 <p style="margin-left:22%;">display this help and exit</p>
 
-<table width="100%" border="0" rules="none" frame="void"
+<table width="100%" border=0 rules="none" frame="void"
        cellspacing="0" cellpadding="0">
 <tr valign="top" align="left">
 <td width="11%"></td>
 <td width="3%">
 
 
-<p><b>&minus;n</b></p></td>
+
+<p style="margin-top: 1em" valign="top"><b>&minus;n</b></p> </td>
 <td width="8%"></td>
 <td width="38%">
 
 
-<p>suppress trailing newline</p></td>
+<p style="margin-top: 1em" valign="top">suppress trailing
+newline</p> </td>
 <td width="40%">
-</td></tr>
+</td>
 </table>
 
 <p style="margin-left:11%;"><b>&minus;V</b>,
@@ -139,25 +141,22 @@ does not simply copy its arguments to stdout. Instead those
 messages found in the selected catalog are translated.
 Standard search directory: @localedir@</p>
 
-<h2>AUTHOR
 <a name="AUTHOR"></a>
-</h2>
+<h2>AUTHOR</h2>
 
 
 <p style="margin-left:11%; margin-top: 1em">Written by
 Ulrich Drepper.</p>
 
-<h2>REPORTING BUGS
 <a name="REPORTING BUGS"></a>
-</h2>
+<h2>REPORTING BUGS</h2>
 
 
 <p style="margin-left:11%; margin-top: 1em">Report bugs to
 &lt;bug-gnu-gettext@gnu.org&gt;.</p>
 
-<h2>COPYRIGHT
 <a name="COPYRIGHT"></a>
-</h2>
+<h2>COPYRIGHT</h2>
 
 
 <p style="margin-left:11%; margin-top: 1em">Copyright
@@ -168,9 +167,8 @@ This is free software: you are free to change and
 redistribute it. There is NO WARRANTY, to the extent
 permitted by law.</p>
 
-<h2>SEE ALSO
 <a name="SEE ALSO"></a>
-</h2>
+<h2>SEE ALSO</h2>
 
 
 <p style="margin-left:11%; margin-top: 1em">The full

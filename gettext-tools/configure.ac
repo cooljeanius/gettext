@@ -16,13 +16,13 @@ dnl along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 dnl Process this file with autoconf to produce a configure script.
 
-AC_PREREQ([2.59])
+AC_PREREQ([2.70])
 AC_INIT([gettext-tools],[0.18.2])
 AC_CONFIG_SRCDIR([src/msgfmt.c])
 AC_CONFIG_AUX_DIR([../build-aux])
-. $srcdir/../version.sh
-gl_INIT_PACKAGE([gettext-tools], [$VERSION_NUMBER])
-AM_INIT_AUTOMAKE([silent-rules])
+. ${srcdir}/../version.sh
+gl_INIT_PACKAGE([gettext-tools],[${VERSION_NUMBER}])
+AM_INIT_AUTOMAKE([1.5 gnu no-dependencies silent-rules subdir-objects])
 AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_MACRO_DIR([m4])
 AM_MAINTAINER_MODE
@@ -143,25 +143,21 @@ dnl Test whether msgmerge must be linked against libm. This is the case on
 dnl most systems; but BeOS has all <math.h> functions in libc and doesn't have
 dnl a libm.
 MSGMERGE_LIBM=?
-AC_TRY_LINK([
+AC_LINK_IFELSE([AC_LANG_PROGRAM([[
    #ifndef __NO_MATH_INLINES
    # define __NO_MATH_INLINES 1 /* for glibc */
    #endif
    #include <math.h>
-   double x;],
-  [x = ceil(x); x = sqrt(x);],
-  [MSGMERGE_LIBM=])
+   double x;]], [[x = ceil(x); x = sqrt(x);]])],[MSGMERGE_LIBM=],[])
 if test "$MSGMERGE_LIBM" = "?"; then
   save_LIBS="$LIBS" 
   LIBS="$LIBS -lm"
-  AC_TRY_LINK([
+  AC_LINK_IFELSE([AC_LANG_PROGRAM([[
      #ifndef __NO_MATH_INLINES
      # define __NO_MATH_INLINES 1 /* for glibc */
      #endif
      #include <math.h>
-     double x;],
-    [x = ceil(x); x = sqrt(x);],
-    [MSGMERGE_LIBM="-lm"])
+     double x;]], [[x = ceil(x); x = sqrt(x);]])],[MSGMERGE_LIBM="-lm"],[])
   LIBS="$save_LIBS"
 fi
 if test "$MSGMERGE_LIBM" = "?"; then
@@ -169,19 +165,29 @@ if test "$MSGMERGE_LIBM" = "?"; then
 fi
 AC_SUBST([MSGMERGE_LIBM])
 
-dnl Checks for header files, functions and declarations.
+dnl# Checks for header files, functions and declarations.
 gl_INIT
 grgl_INIT
 gtpo_INIT
 
-dnl Checks for header files.
+dnl# Checks for header files.
 AC_FUNC_ALLOCA
 AC_HEADER_RESOLV
-AC_HEADER_STDC
+dnl# autoupdate says:
+dnl# The preprocessor macro `STDC_HEADERS' is obsolete.
+dnl# Except in unusual embedded environments, you can safely include all
+dnl# ISO C90 headers unconditionally.
+# Autoupdate added the next two lines to ensure that your configure
+# script's behavior did not change.  They are probably safe to remove.
+AC_CHECK_INCLUDES_DEFAULT
+if test "x${EGREP}" = "x"; then
+  test -z "${EGREP}"
+  AC_PROG_EGREP
+fi
 AC_CHECK_HEADERS([OS.h arpa/inet.h fcntl.h float.h inttypes.h langinfo.h libintl.h limits.h locale.h malloc.h netdb.h netinet/in.h paths.h stddef.h stdint.h stdio.h stdlib.h string.h strings.h sys/acl.h sys/param.h sys/socket.h sys/time.h sys/timeb.h unistd.h utime.h wchar.h wctype.h])
-AC_CHECK_HEADERS([pwd.h])
+AC_CHECK_HEADERS([pwd.h])dnl
 
-dnl Checks for typedefs, structures, and compiler characteristics.
+dnl# Checks for typedefs, structures, and compiler characteristics.
 AC_C_INLINE
 AC_TYPE_UNSIGNED_LONG_LONG_INT
 AC_TYPE_SIZE_T
@@ -223,7 +229,7 @@ AC_FUNC_STRERROR_R
 AC_FUNC_STRNLEN
 AC_FUNC_STRTOD
 AC_CHECK_FUNCS([acl alarm atexit btowc dup2 getcwd getdelim gethostbyname gethostname getpagesize gettimeofday inet_ntoa isascii iswprint localeconv mblen mbrlen memchr memmove memset mkdir nl_langinfo pathconf pow putenv re_comp regcomp rmdir select setenv setlocale socket sqrt stpcpy strcasecmp strchr strcspn strdup strerror strncasecmp strpbrk strrchr strspn strstr strtol strtoul tzset uname utime wcwidth])
-AC_FUNC_VFORK
+AC_FUNC_FORK
 gt_SIGINFO
 gt_SETLOCALE
 

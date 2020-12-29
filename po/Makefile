@@ -22,7 +22,7 @@ srcdir = .
 top_srcdir = ..
 
 
-prefix = /Users/egall/usr/local
+prefix = /usr/local
 exec_prefix = ${prefix}
 datarootdir = ${prefix}/share
 datadir = ${datarootdir}
@@ -35,29 +35,29 @@ INSTALL_DATA = ${INSTALL} -m 644
 # We use $(mkdir_p).
 # In automake <= 1.9.x, $(mkdir_p) is defined either as "mkdir -p --" or as
 # "$(mkinstalldirs)" or as "$(install_sh) -d". For these automake versions,
-# ${SHELL} /Users/egall/Downloads/gettext-0.18.2/build-aux/install-sh does not start with $(SHELL), so we add it.
+# ${SHELL} /Users/ericgallager/Documents/GitHub/gettext/build-aux/install-sh does not start with $(SHELL), so we add it.
 # In automake >= 1.10, $(MKDIR_P) is derived from ${MKDIR_P}, which is defined
 # either as "/path/to/mkdir -p" or ".../install-sh -c -d". For these automake
 # versions, $(mkinstalldirs) and $(install_sh) are unused.
-mkinstalldirs = $(SHELL) ${SHELL} /Users/egall/Downloads/gettext-0.18.2/build-aux/install-sh -d
-install_sh = $(SHELL) ${SHELL} /Users/egall/Downloads/gettext-0.18.2/build-aux/install-sh
-MKDIR_P = ../build-aux/install-sh -c -d
+mkinstalldirs = $(SHELL) ${SHELL} /Users/ericgallager/Documents/GitHub/gettext/build-aux/install-sh -d
+install_sh = $(SHELL) ${SHELL} /Users/ericgallager/Documents/GitHub/gettext/build-aux/install-sh
+MKDIR_P = /opt/local/bin/gmkdir -p
 mkdir_p = $(MKDIR_P)
 
-GMSGFMT_ = /Users/egall/usr/local/bin/msgfmt
-GMSGFMT_no = /Users/egall/usr/local/bin/msgfmt
-GMSGFMT_yes = /Users/egall/usr/local/bin/msgfmt
+GMSGFMT_ = /usr/local/bin/msgfmt
+GMSGFMT_no = /usr/local/bin/msgfmt
+GMSGFMT_yes = /usr/local/bin/msgfmt
 GMSGFMT = $(GMSGFMT_$(USE_MSGCTXT))
-MSGFMT_ = /Users/egall/usr/local/bin/msgfmt
-MSGFMT_no = /Users/egall/usr/local/bin/msgfmt
-MSGFMT_yes = /Users/egall/usr/local/bin/msgfmt
+MSGFMT_ = /usr/local/bin/msgfmt
+MSGFMT_no = /usr/local/bin/msgfmt
+MSGFMT_yes = /usr/local/bin/msgfmt
 MSGFMT = $(MSGFMT_$(USE_MSGCTXT))
-XGETTEXT_ = /Users/egall/usr/local/bin/xgettext
-XGETTEXT_no = /Users/egall/usr/local/bin/xgettext
-XGETTEXT_yes = /Users/egall/usr/local/bin/xgettext
+XGETTEXT_ = /usr/local/bin/xgettext
+XGETTEXT_no = /usr/local/bin/xgettext
+XGETTEXT_yes = /usr/local/bin/xgettext
 XGETTEXT = $(XGETTEXT_$(USE_MSGCTXT))
 MSGMERGE = msgmerge
-MSGMERGE_UPDATE = /Users/egall/usr/local/bin/msgmerge --update
+MSGMERGE_UPDATE = /usr/local/bin/msgmerge --update
 MSGINIT = msginit
 MSGCONV = msgconv
 MSGFILTER = msgfilter

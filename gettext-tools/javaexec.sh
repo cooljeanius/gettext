@@ -27,7 +27,7 @@
 # The extra CLASSPATH must have been set prior to calling this script.
 
 CONF_JAVA='java'
-CONF_CLASSPATH=''
+CONF_CLASSPATH='/opt/sw/share/java/libidn-java/libidn-1.34.jar:/opt/sw/share/java/svn-javahl/svn-javahl.jar:/opt/sw/share/java/commons-codec/commons-codec-1.4.jar:/opt/sw/share/java/jts/jts-1.8.jar:/opt/sw/share/java/jts/jtsio-1.8.jar:/opt/sw/share/java/bcel/bcel-5.2.jar:/opt/sw/share/java/junit/junit.jar:/opt/sw/share/java/antlr/antlr.jar:/opt/sw/share/java/jsapi/jsapi.jar:/opt/sw/share/java/saxon/saxon9he.jar:/opt/sw/share/java/jakarta-regexp/jakarta-regexp.jar:/Users/ericgallager/GNUstep/Library/Libraries/Java:/opt/local/GNUstep/lib/GNUstep/Libraries/Java'
 if test -n ""; then
   # Combine given CLASSPATH and configured CLASSPATH.
   if test -n "$CLASSPATH"; then

@@ -27,8 +27,8 @@
 # The extra CLASSPATH must have been set prior to calling this script.
 # Options that can be passed are -O, -g and "-d DIRECTORY".
 
-CONF_JAVAC='javac -source 1.3'
-CONF_CLASSPATH=''
+CONF_JAVAC=''
+CONF_CLASSPATH='/opt/sw/share/java/libidn-java/libidn-1.34.jar:/opt/sw/share/java/svn-javahl/svn-javahl.jar:/opt/sw/share/java/commons-codec/commons-codec-1.4.jar:/opt/sw/share/java/jts/jts-1.8.jar:/opt/sw/share/java/jts/jtsio-1.8.jar:/opt/sw/share/java/bcel/bcel-5.2.jar:/opt/sw/share/java/junit/junit.jar:/opt/sw/share/java/antlr/antlr.jar:/opt/sw/share/java/jsapi/jsapi.jar:/opt/sw/share/java/saxon/saxon9he.jar:/opt/sw/share/java/jakarta-regexp/jakarta-regexp.jar:/Users/ericgallager/GNUstep/Library/Libraries/Java:/opt/local/GNUstep/lib/GNUstep/Libraries/Java'
 if test -n ""; then
   # Combine given CLASSPATH and configured CLASSPATH.
   if test -n "$CLASSPATH"; then
@@ -48,7 +48,7 @@ else
     test -z "$JAVA_VERBOSE" || echo "$CONF_JAVAC $@"
     exec $CONF_JAVAC "$@"
   else
-    if test -n "1"; then
+    if test -n ""; then
       # In this case, $CONF_JAVAC starts with "javac".
       CLASSPATH="$CLASSPATH"
       export CLASSPATH
