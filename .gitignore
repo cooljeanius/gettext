@@ -60,3 +60,4 @@ gettext-*/*/unused-parameter.h
 gettext-*/*/warn-on-use.h
 gettext-*/*/wchar.h
 gettext-*/*/wctype.h
+gnulib
