@@ -1018,7 +1018,7 @@
 /* Define to 1 if you have the `nl_langinfo' function. */
 #undef HAVE_NL_LANGINFO
 
-/* Define to 1 if libc includes obstacks. */
+/* Define to 1 if the system has obstacks that work with any size object. */
 #undef HAVE_OBSTACK
 
 /* Define to 1 if you have the `opendir' function. */
@@ -1951,6 +1951,9 @@
 
 /* Define to 1 if `sa_sigaction' is a member of `struct sigaction'. */
 #undef HAVE_STRUCT_SIGACTION_SA_SIGACTION
+
+/* Define to 1 if `st_rdev' is a member of `struct stat'. */
+#undef HAVE_STRUCT_STAT_ST_RDEV
 
 /* Define to 1 if `__names' is a member of `struct __locale_struct'. */
 #undef HAVE_STRUCT___LOCALE_STRUCT___NAMES

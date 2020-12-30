@@ -17,9 +17,3 @@ msgstr ""
 
 #: hello.scm:15
 msgid "Hello, world!"
-msgstr "世界よ, こんにちは!"
-
-#: hello.scm:17
-#, scheme-format
-msgid "This program is running as process number ~D."
-msgstr "このプログラムはプロセス番号 ~D で動いています."

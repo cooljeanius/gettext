@@ -1,7 +1,7 @@
-# English translations for GNU gettext-runtime package.
-# Copyright (C) 2012 Free Software Foundation, Inc.
-# This file is distributed under the same license as the GNU gettext-runtime package.
-# Automatically generated, 2012.
+# English translations for gettext-runtime package.
+# Copyright (C) 2020 Free Software Foundation, Inc.
+# This file is distributed under the same license as the gettext-runtime package.
+# Automatically generated, 2020.
 #
 # All this catalog "translates" are quotation characters.
 # The msgids must be ASCII and therefore cannot contain real quotation
@@ -30,10 +30,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: GNU gettext-runtime 0.18.2\n"
+"Project-Id-Version: gettext-runtime 0.18.2\n"
 "Report-Msgid-Bugs-To: bug-gnu-gettext@gnu.org\n"
-"POT-Creation-Date: 2012-12-25 14:19+0900\n"
-"PO-Revision-Date: 2012-12-25 14:19+0900\n"
+"POT-Creation-Date: 2020-12-30 02:07-0500\n"
+"PO-Revision-Date: 2020-12-30 02:07-0500\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: en@boldquot\n"
@@ -44,16 +44,16 @@ msgstr ""
 
 #: gnulib-lib/closeout.c:66
 msgid "write error"
-msgstr "write error"
+msgstr "write error\n"
 
 #: gnulib-lib/error.c:188
 msgid "Unknown system error"
-msgstr "Unknown system error"
+msgstr "Unknown system error\n"
 
 #: gnulib-lib/getopt.c:547 gnulib-lib/getopt.c:576
 #, c-format
 msgid "%s: option '%s' is ambiguous; possibilities:"
-msgstr "%s: option ‘[1m%s[0m’ is ambiguous; possibilities:"
+msgstr "%s: option ‘[1m%s[0m’ is ambiguous; possibilities:\n"
 
 #: gnulib-lib/getopt.c:624 gnulib-lib/getopt.c:628
 #, c-format
@@ -109,7 +109,7 @@ msgstr "%s: option ‘[1m-W %s[0m’ requires an argument\n"
 #: gnulib-lib/xmalloc.c:37
 #, c-format
 msgid "memory exhausted"
-msgstr "memory exhausted"
+msgstr "memory exhausted\n"
 
 #: src/envsubst.c:112 src/gettext.c:133 src/ngettext.c:123
 #, c-format, no-wrap
@@ -132,17 +132,17 @@ msgstr "Written by %s.\n"
 #. This is a proper name. See the gettext manual, section Names.
 #: src/envsubst.c:118
 msgid "Bruno Haible"
-msgstr "Bruno Haible"
+msgstr "Bruno Haible\n"
 
 #: src/envsubst.c:127 src/gettext.c:157 src/ngettext.c:141
 #, c-format
 msgid "too many arguments"
-msgstr "too many arguments"
+msgstr "too many arguments\n"
 
 #: src/envsubst.c:138 src/gettext.c:167 src/ngettext.c:153
 #, c-format
 msgid "missing arguments"
-msgstr "missing arguments"
+msgstr "missing arguments\n"
 
 #: src/envsubst.c:171 src/gettext.c:238 src/ngettext.c:207
 #, c-format
@@ -221,16 +221,16 @@ msgstr "Report bugs to <bug-gnu-gettext@gnu.org>.\n"
 #: src/envsubst.c:442
 #, c-format
 msgid "error while reading \"%s\""
-msgstr "error while reading “[1m%s[0m”"
+msgstr "error while reading “[1m%s[0m”\n"
 
 #: src/envsubst.c:443
 msgid "standard input"
-msgstr "standard input"
+msgstr "standard input\n"
 
 #. This is a proper name. See the gettext manual, section Names.
 #: src/gettext.c:139 src/ngettext.c:129
 msgid "Ulrich Drepper"
-msgstr "Ulrich Drepper"
+msgstr "Ulrich Drepper\n"
 
 #: src/gettext.c:243
 #, c-format, no-wrap

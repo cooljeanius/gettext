@@ -1214,6 +1214,7 @@ AC_SUBST([am__untar])
 ]) # _AM_PROG_TAR
 
 m4_include([libgettextpo/gnulib-m4/gnulib-comp.m4])
+m4_include([libgettextpo/gnulib-m4/obstack.m4])
 m4_include([libgrep/gnulib-m4/gnulib-comp.m4])
 m4_include([libgrep/gnulib-m4/langinfo_h.m4])
 m4_include([libgrep/gnulib-m4/localeconv.m4])

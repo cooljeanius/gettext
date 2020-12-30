@@ -82,6 +82,8 @@ gnulib-lib/uniname.h
 gnulib-tests/test-posix_spawn*.sh
 libgrep/langinfo.h
 libgettextpo/gettext-po.h
+po/en@*quot.insert-header
+po/remove-potcdate.sed
 src/.libs/*
 src/hostname
 src/msgattrib

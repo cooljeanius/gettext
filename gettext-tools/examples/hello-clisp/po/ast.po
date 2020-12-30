@@ -18,9 +18,3 @@ msgstr ""
 
 #: hello.lisp.in:11
 msgid "Hello, world!"
-msgstr "¡Hola, mundu!"
-
-#: hello.lisp.in:13
-#, lisp-format
-msgid "This program is running as process number ~D."
-msgstr "Esti programa ta corriendo como'l procesu númberu ~D."

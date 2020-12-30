@@ -17,9 +17,3 @@ msgstr ""
 
 #: hello.sh:14
 msgid "Hello, world!"
-msgstr "世界よ, こんにちは!"
-
-#: hello.sh:17
-#, sh-format
-msgid "This program is running as process number $pid."
-msgstr "このプログラムはプロセス番号 $pid で動いています."

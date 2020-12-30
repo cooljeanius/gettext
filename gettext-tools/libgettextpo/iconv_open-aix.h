@@ -1,5 +1,5 @@
 /* ANSI-C code produced by gperf version 3.0.3 */
-/* Command-line: gperf -m 10 ./iconv_open-aix.gperf  */
+/* Command-line: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/gperf -m 10 ./iconv_open-aix.gperf  */
 /* Computed positions: -k'4,$' */
 
 #if !((' ' == 32) && ('!' == 33) && ('"' == 34) && ('#' == 35) \
@@ -157,90 +157,84 @@ static const struct mapping mappings[] =
   {
     {-1}, {-1}, {-1}, {-1}, {-1}, {-1},
 #line 43 "./iconv_open-aix.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str6, "IBM-eucTW"},
+    {offsetof(struct stringpool_t, stringpool_str6), "IBM-eucTW"},
 #line 42 "./iconv_open-aix.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str7, "IBM-eucKR"},
+    {offsetof(struct stringpool_t, stringpool_str7), "IBM-eucKR"},
 #line 25 "./iconv_open-aix.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str8, "IBM-852"},
+    {offsetof(struct stringpool_t, stringpool_str8), "IBM-852"},
 #line 41 "./iconv_open-aix.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str9, "IBM-eucJP"},
+    {offsetof(struct stringpool_t, stringpool_str9), "IBM-eucJP"},
 #line 14 "./iconv_open-aix.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str10, "ISO8859-2"},
+    {offsetof(struct stringpool_t, stringpool_str10), "ISO8859-2"},
 #line 27 "./iconv_open-aix.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str11, "IBM-857"},
+    {offsetof(struct stringpool_t, stringpool_str11), "IBM-857"},
 #line 24 "./iconv_open-aix.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str12, "IBM-850"},
+    {offsetof(struct stringpool_t, stringpool_str12), "IBM-850"},
 #line 19 "./iconv_open-aix.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str13, "ISO8859-7"},
+    {offsetof(struct stringpool_t, stringpool_str13), "ISO8859-7"},
 #line 33 "./iconv_open-aix.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str14, "IBM-932"},
+    {offsetof(struct stringpool_t, stringpool_str14), "IBM-932"},
 #line 40 "./iconv_open-aix.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str15, "IBM-eucCN"},
+    {offsetof(struct stringpool_t, stringpool_str15), "IBM-eucCN"},
 #line 44 "./iconv_open-aix.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str16, "big5"},
+    {offsetof(struct stringpool_t, stringpool_str16), "big5"},
 #line 23 "./iconv_open-aix.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str17, "IBM-437"},
+    {offsetof(struct stringpool_t, stringpool_str17), "IBM-437"},
     {-1},
 #line 17 "./iconv_open-aix.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str19, "ISO8859-5"},
+    {offsetof(struct stringpool_t, stringpool_str19), "ISO8859-5"},
 #line 22 "./iconv_open-aix.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str20, "ISO8859-15"},
+    {offsetof(struct stringpool_t, stringpool_str20), "ISO8859-15"},
 #line 15 "./iconv_open-aix.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str21, "ISO8859-3"},
+    {offsetof(struct stringpool_t, stringpool_str21), "ISO8859-3"},
 #line 31 "./iconv_open-aix.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str22, "IBM-921"},
+    {offsetof(struct stringpool_t, stringpool_str22), "IBM-921"},
 #line 35 "./iconv_open-aix.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str23, "IBM-1046"},
+    {offsetof(struct stringpool_t, stringpool_str23), "IBM-1046"},
 #line 20 "./iconv_open-aix.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str24, "ISO8859-8"},
+    {offsetof(struct stringpool_t, stringpool_str24), "ISO8859-8"},
 #line 26 "./iconv_open-aix.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str25, "IBM-856"},
+    {offsetof(struct stringpool_t, stringpool_str25), "IBM-856"},
 #line 37 "./iconv_open-aix.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str26, "IBM-1125"},
+    {offsetof(struct stringpool_t, stringpool_str26), "IBM-1125"},
 #line 18 "./iconv_open-aix.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str27, "ISO8859-6"},
+    {offsetof(struct stringpool_t, stringpool_str27), "ISO8859-6"},
 #line 29 "./iconv_open-aix.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str28, "IBM-865"},
+    {offsetof(struct stringpool_t, stringpool_str28), "IBM-865"},
 #line 32 "./iconv_open-aix.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str29, "IBM-922"},
+    {offsetof(struct stringpool_t, stringpool_str29), "IBM-922"},
 #line 39 "./iconv_open-aix.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str30, "IBM-1252"},
+    {offsetof(struct stringpool_t, stringpool_str30), "IBM-1252"},
 #line 21 "./iconv_open-aix.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str31, "ISO8859-9"},
+    {offsetof(struct stringpool_t, stringpool_str31), "ISO8859-9"},
     {-1},
 #line 34 "./iconv_open-aix.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str33, "IBM-943"},
+    {offsetof(struct stringpool_t, stringpool_str33), "IBM-943"},
 #line 16 "./iconv_open-aix.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str34, "ISO8859-4"},
+    {offsetof(struct stringpool_t, stringpool_str34), "ISO8859-4"},
 #line 13 "./iconv_open-aix.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str35, "ISO8859-1"},
+    {offsetof(struct stringpool_t, stringpool_str35), "ISO8859-1"},
     {-1}, {-1},
 #line 38 "./iconv_open-aix.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str38, "IBM-1129"},
+    {offsetof(struct stringpool_t, stringpool_str38), "IBM-1129"},
     {-1},
 #line 30 "./iconv_open-aix.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str40, "IBM-869"},
+    {offsetof(struct stringpool_t, stringpool_str40), "IBM-869"},
 #line 36 "./iconv_open-aix.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str41, "IBM-1124"},
+    {offsetof(struct stringpool_t, stringpool_str41), "IBM-1124"},
     {-1}, {-1},
 #line 28 "./iconv_open-aix.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str44, "IBM-861"}
+    {offsetof(struct stringpool_t, stringpool_str44), "IBM-861"}
   };
 
-#ifdef __GNUC__
-__inline
-#ifdef __GNUC_STDC_INLINE__
-__attribute__ ((__gnu_inline__))
-#endif
-#endif
 const struct mapping *
 mapping_lookup (register const char *str, register unsigned int len)
 {
   if (len <= MAX_WORD_LENGTH && len >= MIN_WORD_LENGTH)
     {
-      register int key = mapping_hash (str, len);
+      unsigned int key = mapping_hash (str, len);
 
-      if (key <= MAX_HASH_VALUE && key >= 0)
+      if (key <= MAX_HASH_VALUE)
         {
           register int o = mappings[key].standard_name;
           if (o >= 0)

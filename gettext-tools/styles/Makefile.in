@@ -90,6 +90,7 @@ subdir = styles
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps =  \
 	$(top_srcdir)/libgettextpo/gnulib-m4/gnulib-comp.m4 \
+	$(top_srcdir)/libgettextpo/gnulib-m4/obstack.m4 \
 	$(top_srcdir)/libgrep/gnulib-m4/gnulib-comp.m4 \
 	$(top_srcdir)/libgrep/gnulib-m4/langinfo_h.m4 \
 	$(top_srcdir)/libgrep/gnulib-m4/localeconv.m4 \

@@ -1,5 +1,5 @@
 /* ANSI-C code produced by gperf version 3.0.3 */
-/* Command-line: gperf -m 10 ./iconv_open-hpux.gperf  */
+/* Command-line: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/gperf -m 10 ./iconv_open-hpux.gperf  */
 /* Computed positions: -k'4,$' */
 
 #if !((' ' == 32) && ('!' == 33) && ('"' == 34) && ('#' == 35) \
@@ -181,109 +181,103 @@ static const struct mapping mappings[] =
   {
     {-1}, {-1}, {-1}, {-1}, {-1}, {-1},
 #line 40 "./iconv_open-hpux.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str6, "cp1256"},
+    {offsetof(struct stringpool_t, stringpool_str6), "cp1256"},
 #line 34 "./iconv_open-hpux.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str7, "cp1250"},
+    {offsetof(struct stringpool_t, stringpool_str7), "cp1250"},
 #line 35 "./iconv_open-hpux.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str8, "cp1251"},
+    {offsetof(struct stringpool_t, stringpool_str8), "cp1251"},
 #line 23 "./iconv_open-hpux.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str9, "cp850"},
+    {offsetof(struct stringpool_t, stringpool_str9), "cp850"},
 #line 49 "./iconv_open-hpux.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str10, "tis620"},
+    {offsetof(struct stringpool_t, stringpool_str10), "tis620"},
 #line 38 "./iconv_open-hpux.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str11, "cp1254"},
+    {offsetof(struct stringpool_t, stringpool_str11), "cp1254"},
 #line 16 "./iconv_open-hpux.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str12, "iso88596"},
+    {offsetof(struct stringpool_t, stringpool_str12), "iso88596"},
 #line 53 "./iconv_open-hpux.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str13, "eucTW"},
+    {offsetof(struct stringpool_t, stringpool_str13), "eucTW"},
 #line 13 "./iconv_open-hpux.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str14, "iso88591"},
+    {offsetof(struct stringpool_t, stringpool_str14), "iso88591"},
 #line 19 "./iconv_open-hpux.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str15, "iso88599"},
+    {offsetof(struct stringpool_t, stringpool_str15), "iso88599"},
 #line 39 "./iconv_open-hpux.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str16, "cp1255"},
+    {offsetof(struct stringpool_t, stringpool_str16), "cp1255"},
 #line 54 "./iconv_open-hpux.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str17, "big5"},
+    {offsetof(struct stringpool_t, stringpool_str17), "big5"},
 #line 25 "./iconv_open-hpux.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str18, "cp855"},
+    {offsetof(struct stringpool_t, stringpool_str18), "cp855"},
 #line 41 "./iconv_open-hpux.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str19, "cp1257"},
+    {offsetof(struct stringpool_t, stringpool_str19), "cp1257"},
 #line 52 "./iconv_open-hpux.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str20, "eucKR"},
+    {offsetof(struct stringpool_t, stringpool_str20), "eucKR"},
 #line 26 "./iconv_open-hpux.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str21, "cp857"},
+    {offsetof(struct stringpool_t, stringpool_str21), "cp857"},
 #line 15 "./iconv_open-hpux.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str22, "iso88595"},
+    {offsetof(struct stringpool_t, stringpool_str22), "iso88595"},
 #line 20 "./iconv_open-hpux.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str23, "iso885915"},
+    {offsetof(struct stringpool_t, stringpool_str23), "iso885915"},
 #line 31 "./iconv_open-hpux.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str24, "cp866"},
+    {offsetof(struct stringpool_t, stringpool_str24), "cp866"},
 #line 17 "./iconv_open-hpux.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str25, "iso88597"},
+    {offsetof(struct stringpool_t, stringpool_str25), "iso88597"},
 #line 27 "./iconv_open-hpux.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str26, "cp861"},
+    {offsetof(struct stringpool_t, stringpool_str26), "cp861"},
 #line 32 "./iconv_open-hpux.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str27, "cp869"},
+    {offsetof(struct stringpool_t, stringpool_str27), "cp869"},
 #line 33 "./iconv_open-hpux.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str28, "cp874"},
+    {offsetof(struct stringpool_t, stringpool_str28), "cp874"},
 #line 29 "./iconv_open-hpux.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str29, "cp864"},
+    {offsetof(struct stringpool_t, stringpool_str29), "cp864"},
 #line 36 "./iconv_open-hpux.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str30, "cp1252"},
+    {offsetof(struct stringpool_t, stringpool_str30), "cp1252"},
 #line 21 "./iconv_open-hpux.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str31, "cp437"},
+    {offsetof(struct stringpool_t, stringpool_str31), "cp437"},
 #line 24 "./iconv_open-hpux.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str32, "cp852"},
+    {offsetof(struct stringpool_t, stringpool_str32), "cp852"},
 #line 22 "./iconv_open-hpux.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str33, "cp775"},
+    {offsetof(struct stringpool_t, stringpool_str33), "cp775"},
 #line 30 "./iconv_open-hpux.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str34, "cp865"},
+    {offsetof(struct stringpool_t, stringpool_str34), "cp865"},
 #line 51 "./iconv_open-hpux.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str35, "eucJP"},
+    {offsetof(struct stringpool_t, stringpool_str35), "eucJP"},
 #line 14 "./iconv_open-hpux.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str36, "iso88592"},
+    {offsetof(struct stringpool_t, stringpool_str36), "iso88592"},
 #line 55 "./iconv_open-hpux.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str37, "sjis"},
+    {offsetof(struct stringpool_t, stringpool_str37), "sjis"},
 #line 42 "./iconv_open-hpux.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str38, "cp1258"},
+    {offsetof(struct stringpool_t, stringpool_str38), "cp1258"},
 #line 56 "./iconv_open-hpux.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str39, "utf8"},
+    {offsetof(struct stringpool_t, stringpool_str39), "utf8"},
 #line 48 "./iconv_open-hpux.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str40, "kana8"},
+    {offsetof(struct stringpool_t, stringpool_str40), "kana8"},
 #line 43 "./iconv_open-hpux.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str41, "roman8"},
+    {offsetof(struct stringpool_t, stringpool_str41), "roman8"},
 #line 46 "./iconv_open-hpux.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str42, "hebrew8"},
+    {offsetof(struct stringpool_t, stringpool_str42), "hebrew8"},
 #line 50 "./iconv_open-hpux.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str43, "hp15CN"},
+    {offsetof(struct stringpool_t, stringpool_str43), "hp15CN"},
 #line 18 "./iconv_open-hpux.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str44, "iso88598"},
+    {offsetof(struct stringpool_t, stringpool_str44), "iso88598"},
 #line 47 "./iconv_open-hpux.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str45, "turkish8"},
+    {offsetof(struct stringpool_t, stringpool_str45), "turkish8"},
 #line 45 "./iconv_open-hpux.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str46, "greek8"},
+    {offsetof(struct stringpool_t, stringpool_str46), "greek8"},
 #line 44 "./iconv_open-hpux.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str47, "arabic8"},
+    {offsetof(struct stringpool_t, stringpool_str47), "arabic8"},
 #line 28 "./iconv_open-hpux.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str48, "cp862"},
+    {offsetof(struct stringpool_t, stringpool_str48), "cp862"},
 #line 37 "./iconv_open-hpux.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str49, "cp1253"}
+    {offsetof(struct stringpool_t, stringpool_str49), "cp1253"}
   };
 
-#ifdef __GNUC__
-__inline
-#ifdef __GNUC_STDC_INLINE__
-__attribute__ ((__gnu_inline__))
-#endif
-#endif
 const struct mapping *
 mapping_lookup (register const char *str, register unsigned int len)
 {
   if (len <= MAX_WORD_LENGTH && len >= MIN_WORD_LENGTH)
     {
-      register int key = mapping_hash (str, len);
+      unsigned int key = mapping_hash (str, len);
 
-      if (key <= MAX_HASH_VALUE && key >= 0)
+      if (key <= MAX_HASH_VALUE)
         {
           register int o = mappings[key].standard_name;
           if (o >= 0)

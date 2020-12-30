@@ -17,9 +17,3 @@ msgstr ""
 
 #: hello.hello_world
 msgid "Hello, world!"
-msgstr "世界よ, こんにちは!"
-
-#: hello.running_as
-#, object-pascal-format
-msgid "This program is running as process number %d."
-msgstr "このプログラムはプロセス番号 %d で動いています."

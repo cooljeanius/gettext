@@ -17,17 +17,3 @@ msgstr ""
 
 #: hello.cc:46
 msgid "Hello example"
-msgstr "「こんにちは」の例"
-
-#: hello.cc:48
-msgid "Hello world example"
-msgstr "「世界よ, こんにちは」の例"
-
-#: hellowindow.cc:42
-msgid "Hello, world!"
-msgstr "世界よ, こんにちは!"
-
-#: hellowindow.cc:49
-#, qt-format
-msgid "This program is running as process number %1."
-msgstr "このプログラムはプロセス番号 %1 で動いています."

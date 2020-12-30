@@ -3143,6 +3143,66 @@ printf "%s\n" "$ac_res" >&6; }
 
 } # ac_fn_c_find_intX_t
 
+# ac_fn_c_check_member LINENO AGGR MEMBER VAR INCLUDES
+# ----------------------------------------------------
+# Tries to find if the field MEMBER exists in type AGGR, after including
+# INCLUDES, setting cache variable VAR accordingly.
+ac_fn_c_check_member ()
+{
+  as_lineno=${as_lineno-"$1"} as_lineno_stack=as_lineno_stack=$as_lineno_stack
+  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for $2.$3" >&5
+printf %s "checking for $2.$3... " >&6; }
+if eval test \${$4+y}
+then :
+  printf %s "(cached) " >&6
+else $as_nop
+  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+$5
+int
+main (void)
+{
+static $2 ac_aggr;
+if (ac_aggr.$3)
+return 0;
+  ;
+  return 0;
+}
+_ACEOF
+if ac_fn_c_try_compile "$LINENO"
+then :
+  eval "$4=yes"
+else $as_nop
+  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+$5
+int
+main (void)
+{
+static $2 ac_aggr;
+if (sizeof ac_aggr.$3)
+return 0;
+  ;
+  return 0;
+}
+_ACEOF
+if ac_fn_c_try_compile "$LINENO"
+then :
+  eval "$4=yes"
+else $as_nop
+  eval "$4=no"
+fi
+rm -f core conftest.err conftest.$ac_objext conftest.beam conftest.$ac_ext
+fi
+rm -f core conftest.err conftest.$ac_objext conftest.beam conftest.$ac_ext
+fi
+eval ac_res=\$$4
+	       { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $ac_res" >&5
+printf "%s\n" "$ac_res" >&6; }
+  eval $as_lineno_stack; ${as_lineno_stack:+:} unset as_lineno
+
+} # ac_fn_c_check_member
+
 # ac_fn_c_find_uintX_t LINENO BITS VAR
 # ------------------------------------
 # Finds an unsigned integer type with width BITS, setting cache variable VAR
@@ -7833,23 +7893,23 @@ EOF
         if $JAVAC --version 2>/dev/null | sed -e 1q | grep gcj > /dev/null; then
             if $JAVAC --version 2>/dev/null | sed -e 's,^[^0-9]*,,' -e 1q | sed -e '/^4\.[012]/d' | grep '^[4-9]' >/dev/null; then
                         rm -f conftest.class
-        if { echo "$as_me:7836: $JAVAC -d . conftest.java" >&5
+        if { echo "$as_me:7896: $JAVAC -d . conftest.java" >&5
              $JAVAC -d . conftest.java >&5 2>&1
            } \
            && test -f conftest.class \
            && expr `func_classfile_version conftest.class` '<=' $cfversion >/dev/null 2>&5; then
                     rm -f conftest.class
           rm -f conftestfail.class
-          if { echo "$as_me:7843: $JAVAC -fsource=$source_version -d . conftest.java" >&5
+          if { echo "$as_me:7903: $JAVAC -fsource=$source_version -d . conftest.java" >&5
                $JAVAC -fsource="$source_version" -d . conftest.java >&5 2>&1
              } \
              && test -f conftest.class \
              && expr `func_classfile_version conftest.class` '<=' $cfversion >/dev/null 2>&5 \
-             && { echo "$as_me:7848: $JAVAC -d . conftestfail.java" >&5
+             && { echo "$as_me:7908: $JAVAC -d . conftestfail.java" >&5
                   $JAVAC -d . conftestfail.java >&5 2>&1
                 } \
              && test -f conftestfail.class \
-             && ! { echo "$as_me:7852: $JAVAC -fsource=$source_version -d . conftestfail.java" >&5
+             && ! { echo "$as_me:7912: $JAVAC -fsource=$source_version -d . conftestfail.java" >&5
                     $JAVAC -fsource="$source_version" -d . conftestfail.java >&5 2>&1
                   }; then
             CONF_JAVAC="$JAVAC -fsource=$source_version"
@@ -7863,7 +7923,7 @@ EOF
         else
                     rm -f conftest.class
           rm -f conftestfail.class
-          if { echo "$as_me:7866: $JAVAC -fsource=$source_version -ftarget=$target_version -d . conftest.java" >&5
+          if { echo "$as_me:7926: $JAVAC -fsource=$source_version -ftarget=$target_version -d . conftest.java" >&5
                $JAVAC -fsource="$source_version" -ftarget="$target_version" -d . conftest.java >&5 2>&1
              } \
              && test -f conftest.class \
@@ -7876,7 +7936,7 @@ EOF
       else
                 if test "$target_version" = 1.4 && test "$source_version" = 1.4; then
                     rm -f conftest.class
-          if { echo "$as_me:7879: $JAVAC -d . conftest.java" >&5
+          if { echo "$as_me:7939: $JAVAC -d . conftest.java" >&5
                $JAVAC -d . conftest.java >&5 2>&1
              } \
              && test -f conftest.class; then
@@ -7888,7 +7948,7 @@ EOF
           if test "$target_version" = 1.4 && test "$source_version" = 1.3; then
                                     javac_works=
             rm -f conftest.class
-            if { echo "$as_me:7891: $JAVAC -d . conftest.java" >&5
+            if { echo "$as_me:7951: $JAVAC -d . conftest.java" >&5
                  $JAVAC -d . conftest.java >&5 2>&1
                } \
                && test -f conftest.class; then
@@ -7896,7 +7956,7 @@ EOF
             fi
             javac_noassert_works=
             rm -f conftest.class
-            if { echo "$as_me:7899: $JAVAC -fno-assert -d . conftest.java" >&5
+            if { echo "$as_me:7959: $JAVAC -fno-assert -d . conftest.java" >&5
                  $JAVAC -fno-assert -d . conftest.java >&5 2>&1
                } \
                && test -f conftest.class; then
@@ -7904,11 +7964,11 @@ EOF
             fi
             if test -n "$javac_works" && test -n "$javac_noassert_works"; then
               rm -f conftestfail.class
-              if { echo "$as_me:7907: $JAVAC -d . conftestfail.java" >&5
+              if { echo "$as_me:7967: $JAVAC -d . conftestfail.java" >&5
                    $JAVAC -d . conftestfail.java >&5 2>&1
                  } \
                  && test -f conftestfail.class \
-                 && ! { echo "$as_me:7911: $JAVAC -fno-assert -d . conftestfail.java" >&5
+                 && ! { echo "$as_me:7971: $JAVAC -fno-assert -d . conftestfail.java" >&5
                         $JAVAC -fno-assert -d . conftestfail.java >&5 2>&1
                       }; then
                                 javac_works=
@@ -7930,23 +7990,23 @@ EOF
       fi
     else
                   rm -f conftest.class
-      if { echo "$as_me:7933: $JAVAC -d . conftest.java" >&5
+      if { echo "$as_me:7993: $JAVAC -d . conftest.java" >&5
            $JAVAC -d . conftest.java >&5 2>&1
          } \
          && test -f conftest.class \
          && expr `func_classfile_version conftest.class` '<=' $cfversion >/dev/null 2>&5; then
                 rm -f conftest.class
         rm -f conftestfail.class
-        if { echo "$as_me:7940: $JAVAC -source $source_version -d . conftest.java" >&5
+        if { echo "$as_me:8000: $JAVAC -source $source_version -d . conftest.java" >&5
              $JAVAC -source "$source_version" -d . conftest.java >&5 2>&1
            } \
            && test -f conftest.class \
            && expr `func_classfile_version conftest.class` '<=' $cfversion >/dev/null 2>&5 \
-           && { echo "$as_me:7945: $JAVAC -d . conftestfail.java" >&5
+           && { echo "$as_me:8005: $JAVAC -d . conftestfail.java" >&5
                 $JAVAC -d . conftestfail.java >&5 2>&1
               } \
            && test -f conftestfail.class \
-           && ! { echo "$as_me:7949: $JAVAC -source $source_version -d . conftestfail.java" >&5
+           && ! { echo "$as_me:8009: $JAVAC -source $source_version -d . conftestfail.java" >&5
                   $JAVAC -source "$source_version" -d . conftestfail.java >&5 2>&1
                 }; then
           CONF_JAVAC="$JAVAC -source $source_version"
@@ -7959,23 +8019,23 @@ EOF
         fi
       else
                         rm -f conftest.class
-        if { echo "$as_me:7962: $JAVAC -target $target_version -d . conftest.java" >&5
+        if { echo "$as_me:8022: $JAVAC -target $target_version -d . conftest.java" >&5
              $JAVAC -target "$target_version" -d . conftest.java >&5 2>&1
            } \
            && test -f conftest.class \
            && expr `func_classfile_version conftest.class` '<=' $cfversion >/dev/null 2>&5; then
                     rm -f conftest.class
           rm -f conftestfail.class
-          if { echo "$as_me:7969: $JAVAC -target $target_version -source $source_version -d . conftest.java" >&5
+          if { echo "$as_me:8029: $JAVAC -target $target_version -source $source_version -d . conftest.java" >&5
                $JAVAC -target "$target_version" -source "$source_version" -d . conftest.java >&5 2>&1
              } \
              && test -f conftest.class \
              && expr `func_classfile_version conftest.class` '<=' $cfversion >/dev/null 2>&5 \
-             && { echo "$as_me:7974: $JAVAC -target $target_version -d . conftestfail.java" >&5
+             && { echo "$as_me:8034: $JAVAC -target $target_version -d . conftestfail.java" >&5
                   $JAVAC -target "$target_version" -d . conftestfail.java >&5 2>&1
                 } \
              && test -f conftestfail.class \
-             && ! { echo "$as_me:7978: $JAVAC -target $target_version -source $source_version -d . conftestfail.java" >&5
+             && ! { echo "$as_me:8038: $JAVAC -target $target_version -source $source_version -d . conftestfail.java" >&5
                     $JAVAC -target "$target_version" -source "$source_version" -d . conftestfail.java >&5 2>&1
                   }; then
             CONF_JAVAC="$JAVAC -target $target_version -source $source_version"
@@ -7988,7 +8048,7 @@ EOF
           fi
         else
                                         rm -f conftest.class
-          if { echo "$as_me:7991: $JAVAC -target $target_version -source $source_version -d . conftest.java" >&5
+          if { echo "$as_me:8051: $JAVAC -target $target_version -source $source_version -d . conftest.java" >&5
                $JAVAC -target "$target_version" -source "$source_version" -d . conftest.java >&5 2>&1
              } \
              && test -f conftest.class \
@@ -8121,28 +8181,28 @@ fi
 
                 if test -z "$HAVE_JAVACOMP" && test -n "$HAVE_GCJ_IN_PATH"; then
             if gcj --version 2>/dev/null | sed -e 's,^[^0-9]*,,' -e 1q | sed -e '/^3\.[01]/d' | grep '^[3-9]' >/dev/null; then
-                if { echo "$as_me:8124: gcj -C -d . conftestlib.java" >&5
+                if { echo "$as_me:8184: gcj -C -d . conftestlib.java" >&5
              gcj -C -d . conftestlib.java >&5 2>&1
            }; then
                     if gcj --version 2>/dev/null | sed -e 's,^[^0-9]*,,' -e 1q | sed -e '/^4\.[012]/d' | grep '^[4-9]' >/dev/null; then
                                     rm -f conftest.class
-            if { echo "$as_me:8129: gcj -C -d . conftest.java" >&5
+            if { echo "$as_me:8189: gcj -C -d . conftest.java" >&5
                  gcj -C -d . conftest.java >&5 2>&1
                } \
                && test -f conftest.class \
                && expr `func_classfile_version conftest.class` '<=' $cfversion >/dev/null 2>&5; then
                             rm -f conftest.class
               rm -f conftestfail.class
-              if { echo "$as_me:8136: gcj -C -fsource=$source_version -d . conftest.java" >&5
+              if { echo "$as_me:8196: gcj -C -fsource=$source_version -d . conftest.java" >&5
                    gcj -C -fsource="$source_version" -d . conftest.java >&5 2>&1
                  } \
                  && test -f conftest.class \
                  && expr `func_classfile_version conftest.class` '<=' $cfversion >/dev/null 2>&5 \
-                 && { echo "$as_me:8141: gcj -C -d . conftestfail.java" >&5
+                 && { echo "$as_me:8201: gcj -C -d . conftestfail.java" >&5
                       gcj -C -d . conftestfail.java >&5 2>&1
                     } \
                  && test -f conftestfail.class \
-                 && ! { echo "$as_me:8145: gcj -C -fsource=$source_version -d . conftestfail.java" >&5
+                 && ! { echo "$as_me:8205: gcj -C -fsource=$source_version -d . conftestfail.java" >&5
                         gcj -C -fsource="$source_version" -d . conftestfail.java >&5 2>&1
                       }; then
                 CONF_JAVAC="gcj -C -fsource=$source_version"
@@ -8156,7 +8216,7 @@ fi
             else
                             rm -f conftest.class
               rm -f conftestfail.class
-              if { echo "$as_me:8159: gcj -C -fsource=$source_version -ftarget=$target_version -d . conftest.java" >&5
+              if { echo "$as_me:8219: gcj -C -fsource=$source_version -ftarget=$target_version -d . conftest.java" >&5
                    gcj -C -fsource="$source_version" -ftarget="$target_version" -d . conftest.java >&5 2>&1
                  } \
                  && test -f conftest.class \
@@ -8169,7 +8229,7 @@ fi
           else
                                                 if test "$target_version" = 1.4 && test "$source_version" = 1.4; then
               rm -f conftest.class
-              if { echo "$as_me:8172: gcj -C -d . conftest.java" >&5
+              if { echo "$as_me:8232: gcj -C -d . conftest.java" >&5
                    gcj -C -d . conftest.java >&5 2>&1
                  } \
                  && test -f conftest.class; then
@@ -8180,7 +8240,7 @@ fi
             else
               if test "$target_version" = 1.4 && test "$source_version" = 1.3; then
                                                 rm -f conftest.class
-                if { echo "$as_me:8183: gcj -C -fno-assert -d . conftest.java" >&5
+                if { echo "$as_me:8243: gcj -C -fno-assert -d . conftest.java" >&5
                      gcj -C -fno-assert -d . conftest.java >&5 2>&1
                    } \
                    && test -f conftest.class; then
@@ -8189,7 +8249,7 @@ fi
                   HAVE_JAVACOMP=1
                 else
                   rm -f conftest.class
-                  if { echo "$as_me:8192: gcj -C -d . conftest.java" >&5
+                  if { echo "$as_me:8252: gcj -C -d . conftest.java" >&5
                        gcj -C -d . conftest.java >&5 2>&1
                      } \
                      && test -f conftest.class; then
@@ -8208,23 +8268,23 @@ fi
             if { javac -version >/dev/null 2>/dev/null || test $? -le 2; } \
          && ( if javac -help 2>&1 >/dev/null | grep at.dms.kjc.Main >/dev/null && javac -help 2>/dev/null | grep 'released.*2000' >/dev/null ; then exit 1; else exit 0; fi ); then
                                 rm -f conftest.class
-        if { echo "$as_me:8211: javac -d . conftest.java" >&5
+        if { echo "$as_me:8271: javac -d . conftest.java" >&5
              javac -d . conftest.java >&5 2>&1
            } \
            && test -f conftest.class \
            && expr `func_classfile_version conftest.class` '<=' $cfversion >/dev/null 2>&5; then
                     rm -f conftest.class
           rm -f conftestfail.class
-          if { echo "$as_me:8218: javac -source $source_version -d . conftest.java" >&5
+          if { echo "$as_me:8278: javac -source $source_version -d . conftest.java" >&5
                javac -source "$source_version" -d . conftest.java >&5 2>&1
              } \
              && test -f conftest.class \
              && expr `func_classfile_version conftest.class` '<=' $cfversion >/dev/null 2>&5 \
-             && { echo "$as_me:8223: javac -d . conftestfail.java" >&5
+             && { echo "$as_me:8283: javac -d . conftestfail.java" >&5
                   javac -d . conftestfail.java >&5 2>&1
                 } \
              && test -f conftestfail.class \
-             && ! { echo "$as_me:8227: javac -source $source_version -d . conftestfail.java" >&5
+             && ! { echo "$as_me:8287: javac -source $source_version -d . conftestfail.java" >&5
                     javac -source "$source_version" -d . conftestfail.java >&5 2>&1
                   }; then
             CONF_JAVAC="javac -source $source_version"
@@ -8237,23 +8297,23 @@ fi
           fi
         else
                               rm -f conftest.class
-          if { echo "$as_me:8240: javac -target $target_version -d . conftest.java" >&5
+          if { echo "$as_me:8300: javac -target $target_version -d . conftest.java" >&5
                javac -target "$target_version" -d . conftest.java >&5 2>&1
              } \
              && test -f conftest.class \
              && expr `func_classfile_version conftest.class` '<=' $cfversion >/dev/null 2>&5; then
                         rm -f conftest.class
             rm -f conftestfail.class
-            if { echo "$as_me:8247: javac -target $target_version -source $source_version -d . conftest.java" >&5
+            if { echo "$as_me:8307: javac -target $target_version -source $source_version -d . conftest.java" >&5
                  javac -target "$target_version" -source "$source_version" -d . conftest.java >&5 2>&1
                } \
                && test -f conftest.class \
                && expr `func_classfile_version conftest.class` '<=' $cfversion >/dev/null 2>&5 \
-               && { echo "$as_me:8252: javac -target $target_version -d . conftestfail.java" >&5
+               && { echo "$as_me:8312: javac -target $target_version -d . conftestfail.java" >&5
                     javac -target "$target_version" -d . conftestfail.java >&5 2>&1
                   } \
                && test -f conftestfail.class \
-               && ! { echo "$as_me:8256: javac -target $target_version -source $source_version -d . conftestfail.java" >&5
+               && ! { echo "$as_me:8316: javac -target $target_version -source $source_version -d . conftestfail.java" >&5
                       javac -target "$target_version" -source "$source_version" -d . conftestfail.java >&5 2>&1
                     }; then
               CONF_JAVAC="javac -target $target_version -source $source_version"
@@ -8266,7 +8326,7 @@ fi
             fi
           else
                                                 rm -f conftest.class
-            if { echo "$as_me:8269: javac -target $target_version -source $source_version -d . conftest.java" >&5
+            if { echo "$as_me:8329: javac -target $target_version -source $source_version -d . conftest.java" >&5
                  javac -target "$target_version" -source "$source_version" -d . conftest.java >&5 2>&1
                } \
                && test -f conftest.class \
@@ -29054,7 +29114,8 @@ printf "%s\n" "#define LSTAT_FOLLOWS_SLASHED_SYMLINK 1" >>confdefs.h
   esac
 
 
-  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for GNU libc compatible malloc" >&5
+
+    { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for GNU libc compatible malloc" >&5
 printf %s "checking for GNU libc compatible malloc... " >&6; }
 if test ${ac_cv_func_malloc_0_nonnull+y}
 then :
@@ -29062,14 +29123,15 @@ then :
 else $as_nop
   if test "$cross_compiling" = yes
 then :
-  case "$host_os" in # ((
-		  # Guess yes on platforms where we know the result.
-		  *-gnu* | freebsd* | netbsd* | openbsd* | bitrig* \
-		  | hpux* | solaris* | cygwin* | mingw* | msys* )
-		    ac_cv_func_malloc_0_nonnull=yes ;;
-		  # If we don't know, assume the worst.
-		  *) ac_cv_func_malloc_0_nonnull=no ;;
-		esac
+  case "$host_os" in
+          # Guess yes on platforms where we know the result.
+          *-gnu* | gnu* | *-musl* | freebsd* | netbsd* | openbsd* \
+          | hpux* | solaris* | cygwin* | mingw*)
+            ac_cv_func_malloc_0_nonnull="guessing yes" ;;
+          # If we don't know, obey --enable-cross-guesses.
+          *) ac_cv_func_malloc_0_nonnull="$gl_cross_guess_normal" ;;
+        esac
+
 else $as_nop
   cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 /* end confdefs.h.  */
@@ -29078,13 +29140,14 @@ else $as_nop
 int
 main (void)
 {
-void *p = malloc (0);
-		   int result = !p;
-		   free (p);
-		   return result;
+char *p = malloc (0);
+            int result = !p;
+            free (p);
+            return result;
   ;
   return 0;
 }
+
 _ACEOF
 if ac_fn_c_try_run "$LINENO"
 then :
@@ -29096,15 +29159,18 @@ rm -f core *.core core.conftest.* gmon.out bb.out conftest$ac_exeext \
   conftest.$ac_objext conftest.beam conftest.$ac_ext
 fi
 
+
 fi
 { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $ac_cv_func_malloc_0_nonnull" >&5
 printf "%s\n" "$ac_cv_func_malloc_0_nonnull" >&6; }
-if test $ac_cv_func_malloc_0_nonnull = yes
-then :
-  gl_cv_func_malloc_0_nonnull=1
-else $as_nop
-  gl_cv_func_malloc_0_nonnull=0
-fi
+  case "$ac_cv_func_malloc_0_nonnull" in
+    *yes)
+      gl_cv_func_malloc_0_nonnull=1
+      ;;
+    *)
+      gl_cv_func_malloc_0_nonnull=0
+      ;;
+  esac
 
 
 printf "%s\n" "#define MALLOC_0_IS_NONNULL $gl_cv_func_malloc_0_nonnull" >>confdefs.h
@@ -37834,6 +37900,27 @@ printf "%s\n" "#define ssize_t int" >>confdefs.h
 
 fi
 
+ac_fn_c_check_member "$LINENO" "struct stat" "st_rdev" "ac_cv_member_struct_stat_st_rdev" "$ac_includes_default"
+if test "x$ac_cv_member_struct_stat_st_rdev" = xyes
+then :
+
+printf "%s\n" "#define HAVE_STRUCT_STAT_ST_RDEV 1" >>confdefs.h
+
+
+fi
+
+ac_fn_c_find_uintX_t "$LINENO" "8" "ac_cv_c_uint8_t"
+case $ac_cv_c_uint8_t in #(
+  no|yes) ;; #(
+  *)
+
+printf "%s\n" "#define _UINT8_T 1" >>confdefs.h
+
+
+printf "%s\n" "#define uint8_t $ac_cv_c_uint8_t" >>confdefs.h
+;;
+  esac
+
 ac_fn_c_find_uintX_t "$LINENO" "16" "ac_cv_c_uint16_t"
 case $ac_cv_c_uint16_t in #(
   no|yes) ;; #(
@@ -37853,18 +37940,6 @@ printf "%s\n" "#define _UINT32_T 1" >>confdefs.h
 
 
 printf "%s\n" "#define uint32_t $ac_cv_c_uint32_t" >>confdefs.h
-;;
-  esac
-
-ac_fn_c_find_uintX_t "$LINENO" "8" "ac_cv_c_uint8_t"
-case $ac_cv_c_uint8_t in #(
-  no|yes) ;; #(
-  *)
-
-printf "%s\n" "#define _UINT8_T 1" >>confdefs.h
-
-
-printf "%s\n" "#define uint8_t $ac_cv_c_uint8_t" >>confdefs.h
 ;;
   esac
 
@@ -38258,7 +38333,8 @@ esac
 
 fi
 
-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for GNU libc compatible malloc" >&5
+
+    { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for GNU libc compatible malloc" >&5
 printf %s "checking for GNU libc compatible malloc... " >&6; }
 if test ${ac_cv_func_malloc_0_nonnull+y}
 then :
@@ -38266,14 +38342,15 @@ then :
 else $as_nop
   if test "$cross_compiling" = yes
 then :
-  case "$host_os" in # ((
-		  # Guess yes on platforms where we know the result.
-		  *-gnu* | freebsd* | netbsd* | openbsd* | bitrig* \
-		  | hpux* | solaris* | cygwin* | mingw* | msys* )
-		    ac_cv_func_malloc_0_nonnull=yes ;;
-		  # If we don't know, assume the worst.
-		  *) ac_cv_func_malloc_0_nonnull=no ;;
-		esac
+  case "$host_os" in
+          # Guess yes on platforms where we know the result.
+          *-gnu* | gnu* | *-musl* | freebsd* | netbsd* | openbsd* \
+          | hpux* | solaris* | cygwin* | mingw*)
+            ac_cv_func_malloc_0_nonnull="guessing yes" ;;
+          # If we don't know, obey --enable-cross-guesses.
+          *) ac_cv_func_malloc_0_nonnull="$gl_cross_guess_normal" ;;
+        esac
+
 else $as_nop
   cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 /* end confdefs.h.  */
@@ -38282,13 +38359,14 @@ else $as_nop
 int
 main (void)
 {
-void *p = malloc (0);
-		   int result = !p;
-		   free (p);
-		   return result;
+char *p = malloc (0);
+            int result = !p;
+            free (p);
+            return result;
   ;
   return 0;
 }
+
 _ACEOF
 if ac_fn_c_try_run "$LINENO"
 then :
@@ -38300,16 +38378,18 @@ rm -f core *.core core.conftest.* gmon.out bb.out conftest$ac_exeext \
   conftest.$ac_objext conftest.beam conftest.$ac_ext
 fi
 
+
 fi
 { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $ac_cv_func_malloc_0_nonnull" >&5
 printf "%s\n" "$ac_cv_func_malloc_0_nonnull" >&6; }
-if test $ac_cv_func_malloc_0_nonnull = yes
-then :
+  case "$ac_cv_func_malloc_0_nonnull" in
+    *yes)
 
 printf "%s\n" "#define HAVE_MALLOC 1" >>confdefs.h
 
-else $as_nop
-  printf "%s\n" "#define HAVE_MALLOC 0" >>confdefs.h
+      ;;
+    *)
+      printf "%s\n" "#define HAVE_MALLOC 0" >>confdefs.h
 
    case " $LIBOBJS " in
   *" malloc.$ac_objext "* ) ;;
@@ -38320,7 +38400,8 @@ esac
 
 printf "%s\n" "#define malloc rpl_malloc" >>confdefs.h
 
-fi
+      ;;
+  esac
 
 
 
@@ -38763,6 +38844,12 @@ ac_fn_c_check_func "$LINENO" "atexit" "ac_cv_func_atexit"
 if test "x$ac_cv_func_atexit" = xyes
 then :
   printf "%s\n" "#define HAVE_ATEXIT 1" >>confdefs.h
+
+fi
+ac_fn_c_check_func "$LINENO" "dup2" "ac_cv_func_dup2"
+if test "x$ac_cv_func_dup2" = xyes
+then :
+  printf "%s\n" "#define HAVE_DUP2 1" >>confdefs.h
 
 fi
 ac_fn_c_check_func "$LINENO" "getcwd" "ac_cv_func_getcwd"

@@ -1,5 +1,5 @@
 /* ANSI-C code produced by gperf version 3.0.3 */
-/* Command-line: gperf -m 10 ./iconv_open-osf.gperf  */
+/* Command-line: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/gperf -m 10 ./iconv_open-osf.gperf  */
 /* Computed positions: -k'4,$' */
 
 #if !((' ' == 32) && ('!' == 33) && ('"' == 34) && ('#' == 35) \
@@ -169,100 +169,94 @@ static const struct mapping mappings[] =
   {
     {-1}, {-1}, {-1}, {-1}, {-1}, {-1},
 #line 41 "./iconv_open-osf.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str6, "cp1255"},
+    {offsetof(struct stringpool_t, stringpool_str6), "cp1255"},
 #line 24 "./iconv_open-osf.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str7, "cp775"},
+    {offsetof(struct stringpool_t, stringpool_str7), "cp775"},
 #line 36 "./iconv_open-osf.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str8, "cp1250"},
+    {offsetof(struct stringpool_t, stringpool_str8), "cp1250"},
 #line 47 "./iconv_open-osf.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str9, "eucTW"},
+    {offsetof(struct stringpool_t, stringpool_str9), "eucTW"},
 #line 46 "./iconv_open-osf.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str10, "eucKR"},
+    {offsetof(struct stringpool_t, stringpool_str10), "eucKR"},
 #line 50 "./iconv_open-osf.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str11, "TACTIS"},
+    {offsetof(struct stringpool_t, stringpool_str11), "TACTIS"},
 #line 17 "./iconv_open-osf.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str12, "ISO8859-5"},
+    {offsetof(struct stringpool_t, stringpool_str12), "ISO8859-5"},
 #line 22 "./iconv_open-osf.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str13, "ISO8859-15"},
+    {offsetof(struct stringpool_t, stringpool_str13), "ISO8859-15"},
 #line 48 "./iconv_open-osf.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str14, "big5"},
+    {offsetof(struct stringpool_t, stringpool_str14), "big5"},
 #line 27 "./iconv_open-osf.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str15, "cp855"},
+    {offsetof(struct stringpool_t, stringpool_str15), "cp855"},
 #line 44 "./iconv_open-osf.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str16, "cp1258"},
+    {offsetof(struct stringpool_t, stringpool_str16), "cp1258"},
 #line 25 "./iconv_open-osf.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str17, "cp850"},
+    {offsetof(struct stringpool_t, stringpool_str17), "cp850"},
 #line 31 "./iconv_open-osf.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str18, "cp865"},
+    {offsetof(struct stringpool_t, stringpool_str18), "cp865"},
 #line 45 "./iconv_open-osf.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str19, "eucJP"},
+    {offsetof(struct stringpool_t, stringpool_str19), "eucJP"},
 #line 43 "./iconv_open-osf.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str20, "cp1257"},
+    {offsetof(struct stringpool_t, stringpool_str20), "cp1257"},
 #line 42 "./iconv_open-osf.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str21, "cp1256"},
+    {offsetof(struct stringpool_t, stringpool_str21), "cp1256"},
 #line 20 "./iconv_open-osf.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str22, "ISO8859-8"},
+    {offsetof(struct stringpool_t, stringpool_str22), "ISO8859-8"},
 #line 49 "./iconv_open-osf.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str23, "SJIS"},
+    {offsetof(struct stringpool_t, stringpool_str23), "SJIS"},
     {-1},
 #line 21 "./iconv_open-osf.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str25, "ISO8859-9"},
+    {offsetof(struct stringpool_t, stringpool_str25), "ISO8859-9"},
 #line 19 "./iconv_open-osf.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str26, "ISO8859-7"},
+    {offsetof(struct stringpool_t, stringpool_str26), "ISO8859-7"},
 #line 18 "./iconv_open-osf.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str27, "ISO8859-6"},
+    {offsetof(struct stringpool_t, stringpool_str27), "ISO8859-6"},
     {-1},
 #line 28 "./iconv_open-osf.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str29, "cp857"},
+    {offsetof(struct stringpool_t, stringpool_str29), "cp857"},
 #line 38 "./iconv_open-osf.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str30, "cp1252"},
+    {offsetof(struct stringpool_t, stringpool_str30), "cp1252"},
 #line 33 "./iconv_open-osf.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str31, "cp869"},
+    {offsetof(struct stringpool_t, stringpool_str31), "cp869"},
 #line 35 "./iconv_open-osf.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str32, "KSC5601"},
+    {offsetof(struct stringpool_t, stringpool_str32), "KSC5601"},
 #line 32 "./iconv_open-osf.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str33, "cp866"},
+    {offsetof(struct stringpool_t, stringpool_str33), "cp866"},
 #line 23 "./iconv_open-osf.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str34, "cp437"},
+    {offsetof(struct stringpool_t, stringpool_str34), "cp437"},
 #line 37 "./iconv_open-osf.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str35, "cp1251"},
+    {offsetof(struct stringpool_t, stringpool_str35), "cp1251"},
 #line 14 "./iconv_open-osf.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str36, "ISO8859-2"},
+    {offsetof(struct stringpool_t, stringpool_str36), "ISO8859-2"},
 #line 40 "./iconv_open-osf.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str37, "cp1254"},
+    {offsetof(struct stringpool_t, stringpool_str37), "cp1254"},
 #line 34 "./iconv_open-osf.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str38, "cp874"},
+    {offsetof(struct stringpool_t, stringpool_str38), "cp874"},
 #line 26 "./iconv_open-osf.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str39, "cp852"},
+    {offsetof(struct stringpool_t, stringpool_str39), "cp852"},
 #line 39 "./iconv_open-osf.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str40, "cp1253"},
+    {offsetof(struct stringpool_t, stringpool_str40), "cp1253"},
 #line 13 "./iconv_open-osf.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str41, "ISO8859-1"},
+    {offsetof(struct stringpool_t, stringpool_str41), "ISO8859-1"},
 #line 30 "./iconv_open-osf.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str42, "cp862"},
+    {offsetof(struct stringpool_t, stringpool_str42), "cp862"},
 #line 16 "./iconv_open-osf.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str43, "ISO8859-4"},
+    {offsetof(struct stringpool_t, stringpool_str43), "ISO8859-4"},
     {-1}, {-1},
 #line 15 "./iconv_open-osf.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str46, "ISO8859-3"},
+    {offsetof(struct stringpool_t, stringpool_str46), "ISO8859-3"},
 #line 29 "./iconv_open-osf.gperf"
-    {(int)(long)&((struct stringpool_t *)0)->stringpool_str47, "cp861"}
+    {offsetof(struct stringpool_t, stringpool_str47), "cp861"}
   };
 
-#ifdef __GNUC__
-__inline
-#ifdef __GNUC_STDC_INLINE__
-__attribute__ ((__gnu_inline__))
-#endif
-#endif
 const struct mapping *
 mapping_lookup (register const char *str, register unsigned int len)
 {
   if (len <= MAX_WORD_LENGTH && len >= MIN_WORD_LENGTH)
     {
-      register int key = mapping_hash (str, len);
+      unsigned int key = mapping_hash (str, len);
 
-      if (key <= MAX_HASH_VALUE && key >= 0)
+      if (key <= MAX_HASH_VALUE)
         {
           register int o = mappings[key].standard_name;
           if (o >= 0)

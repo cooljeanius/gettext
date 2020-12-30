@@ -19,9 +19,3 @@ msgstr ""
 
 #: hello.cc:68
 msgid "Hello, world!"
-msgstr "Здравствуй, мир!"
-
-#: hello.cc:71
-#, c-format
-msgid "This program is running as process number %d."
-msgstr "Эта программа выполняется как процесс под номером %d."

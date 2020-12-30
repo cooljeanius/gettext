@@ -19,17 +19,3 @@ msgstr ""
 
 #: hello.cc:46
 msgid "Hello example"
-msgstr "Пример: Здравствуй"
-
-#: hello.cc:48
-msgid "Hello world example"
-msgstr "Пример: Здравствуй, мир"
-
-#: hellowindow.cc:42
-msgid "Hello, world!"
-msgstr "Здравствуй, мир!"
-
-#: hellowindow.cc:49
-#, qt-format
-msgid "This program is running as process number %1."
-msgstr "Эта программа выполняется как процесс под номером %1."

@@ -18,9 +18,3 @@ msgstr ""
 
 #: hello.ycp:15
 msgid "Hello, world!"
-msgstr "¡Hola, mundu!"
-
-#: hello.ycp:19
-#, ycp-format
-msgid "This program is running as process number %1."
-msgstr "Esti programa ta corriendo como'l procesu númberu %1."

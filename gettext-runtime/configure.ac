@@ -106,9 +106,10 @@ AC_TYPE_OFF_T
 AC_TYPE_PID_T
 AC_C_RESTRICT
 AC_TYPE_SSIZE_T
+AC_CHECK_MEMBERS([struct stat.st_rdev])
+AC_TYPE_UINT8_T
 AC_TYPE_UINT16_T
 AC_TYPE_UINT32_T
-AC_TYPE_UINT8_T
 AC_CHECK_TYPES([ptrdiff_t])
 AC_FUNC_ALLOCA
 AC_CHECK_HEADERS([OS.h argz.h fcntl.h float.h inttypes.h langinfo.h libintl.h limits.h locale.h malloc.h netdb.h stddef.h stdint.h stdio_ext.h stdlib.h string.h sys/param.h sys/time.h unistd.h wchar.h wctype.h])
@@ -120,7 +121,7 @@ AC_FUNC_MMAP
 AC_FUNC_REALLOC
 AC_FUNC_STRERROR_R
 AC_FUNC_STRNLEN
-AC_CHECK_FUNCS([__argz_count __argz_next __argz_stringify atexit getcwd getpagesize getwd iswprint localeconv mblen mbrlen memchr memmove mempcpy memset munmap nl_langinfo pathconf setenv setlocale stpcpy strcasecmp strchr strcspn strdup strerror strrchr strstr strtol strtoul wcwidth])
+AC_CHECK_FUNCS([__argz_count __argz_next __argz_stringify atexit dup2 getcwd getpagesize getwd iswprint localeconv mblen mbrlen memchr memmove mempcpy memset munmap nl_langinfo pathconf setenv setlocale stpcpy strcasecmp strchr strcspn strdup strerror strrchr strstr strtol strtoul wcwidth])
 
 dnl Put some default definitions into config.h.
 AH_BOTTOM([

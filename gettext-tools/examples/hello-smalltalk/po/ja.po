@@ -17,9 +17,3 @@ msgstr ""
 
 #: hello.st.in:31
 msgid "Hello, world!"
-msgstr "世界よ, こんにちは!"
-
-#: hello.st.in:32
-#, smalltalk-format
-msgid "This program is running as process number %1."
-msgstr "このプログラムはプロセス番号 %1 で動いています."

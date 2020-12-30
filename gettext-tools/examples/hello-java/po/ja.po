@@ -17,9 +17,3 @@ msgstr ""
 
 #: Hello.java:14
 msgid "Hello, world!"
-msgstr "世界よ, こんにちは!"
-
-#: Hello.java:18
-#, java-format
-msgid "This program is running as process number {0}."
-msgstr "このプログラムはプロセス番号 {0} で動いています."

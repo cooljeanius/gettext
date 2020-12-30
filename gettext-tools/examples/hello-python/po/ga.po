@@ -22,4 +22,3 @@ msgstr "Dia duit, a dhomhain!"
 #: hello.py.in:13
 #, python-format
 msgid "This program is running as process number %(pid)d."
-msgstr "Tá an clár seo á rith mar phróiseas %(pid)d."

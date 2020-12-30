@@ -14,6 +14,8 @@ man/gettext.1.html
 man/ngettext.1
 man/ngettext.1.html
 */.libs/*
+po/en@*quot.insert-header
+po/remove-potcdate.sed
 src/envsubst
 src/gettext
 src/ngettext

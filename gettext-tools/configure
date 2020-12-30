@@ -49936,24 +49936,27 @@ rm -rf conftest*
 
 
 
-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for obstacks" >&5
-printf %s "checking for obstacks... " >&6; }
+   { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for obstacks that work with any size object" >&5
+printf %s "checking for obstacks that work with any size object... " >&6; }
 if test ${ac_cv_func_obstack+y}
 then :
   printf %s "(cached) " >&6
 else $as_nop
   cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 /* end confdefs.h.  */
-$ac_includes_default
-		      #include "obstack.h"
+#include "obstack.h"
+             void *obstack_chunk_alloc (size_t n) { return 0; }
+             void obstack_chunk_free (void *p) { }
+             /* Check that an internal function returns size_t, not int.  */
+             size_t _obstack_memory_used (struct obstack *);
+
 int
 main (void)
 {
 struct obstack mem;
-		       #define obstack_chunk_alloc malloc
-		       #define obstack_chunk_free free
-		       obstack_init (&mem);
-		       obstack_free (&mem, 0);
+             obstack_init (&mem);
+             obstack_free (&mem, 0);
+
   ;
   return 0;
 }
@@ -49969,11 +49972,11 @@ rm -f core conftest.err conftest.$ac_objext conftest.beam \
 fi
 { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $ac_cv_func_obstack" >&5
 printf "%s\n" "$ac_cv_func_obstack" >&6; }
-if test $ac_cv_func_obstack = yes; then
+   if test "$ac_cv_func_obstack" = yes; then
 
 printf "%s\n" "#define HAVE_OBSTACK 1" >>confdefs.h
 
-else
+   else
 
 
 
@@ -49984,7 +49987,7 @@ else
 
   gl_LIBOBJS="$gl_LIBOBJS obstack.$ac_objext"
 
-fi
+   fi
 
 
 
@@ -66783,24 +66786,27 @@ printf "%s\n" "#define HAVE_MSVC_INVALID_PARAMETER_HANDLER 1" >>confdefs.h
 
 
 
-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for obstacks" >&5
-printf %s "checking for obstacks... " >&6; }
+   { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for obstacks that work with any size object" >&5
+printf %s "checking for obstacks that work with any size object... " >&6; }
 if test ${ac_cv_func_obstack+y}
 then :
   printf %s "(cached) " >&6
 else $as_nop
   cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 /* end confdefs.h.  */
-$ac_includes_default
-		      #include "obstack.h"
+#include "obstack.h"
+             void *obstack_chunk_alloc (size_t n) { return 0; }
+             void obstack_chunk_free (void *p) { }
+             /* Check that an internal function returns size_t, not int.  */
+             size_t _obstack_memory_used (struct obstack *);
+
 int
 main (void)
 {
 struct obstack mem;
-		       #define obstack_chunk_alloc malloc
-		       #define obstack_chunk_free free
-		       obstack_init (&mem);
-		       obstack_free (&mem, 0);
+             obstack_init (&mem);
+             obstack_free (&mem, 0);
+
   ;
   return 0;
 }
@@ -66816,11 +66822,11 @@ rm -f core conftest.err conftest.$ac_objext conftest.beam \
 fi
 { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $ac_cv_func_obstack" >&5
 printf "%s\n" "$ac_cv_func_obstack" >&6; }
-if test $ac_cv_func_obstack = yes; then
+   if test "$ac_cv_func_obstack" = yes; then
 
 printf "%s\n" "#define HAVE_OBSTACK 1" >>confdefs.h
 
-else
+   else
 
 
 
@@ -66831,7 +66837,7 @@ else
 
   gtpo_LIBOBJS="$gtpo_LIBOBJS obstack.$ac_objext"
 
-fi
+   fi
 
 
 
@@ -71365,6 +71371,15 @@ printf "%s\n" "#define gid_t int" >>confdefs.h
 
 fi
 
+ac_fn_c_find_intX_t "$LINENO" "8" "ac_cv_c_int8_t"
+case $ac_cv_c_int8_t in #(
+  no|yes) ;; #(
+  *)
+
+printf "%s\n" "#define int8_t $ac_cv_c_int8_t" >>confdefs.h
+;;
+esac
+
 ac_fn_c_find_intX_t "$LINENO" "16" "ac_cv_c_int16_t"
 case $ac_cv_c_int16_t in #(
   no|yes) ;; #(
@@ -71392,15 +71407,6 @@ printf "%s\n" "#define int64_t $ac_cv_c_int64_t" >>confdefs.h
 ;;
 esac
 
-ac_fn_c_find_intX_t "$LINENO" "8" "ac_cv_c_int8_t"
-case $ac_cv_c_int8_t in #(
-  no|yes) ;; #(
-  *)
-
-printf "%s\n" "#define int8_t $ac_cv_c_int8_t" >>confdefs.h
-;;
-esac
-
 ac_fn_c_check_type "$LINENO" "mode_t" "ac_cv_type_mode_t" "$ac_includes_default"
 if test "x$ac_cv_type_mode_t" = xyes
 then :
@@ -71411,24 +71417,27 @@ printf "%s\n" "#define mode_t int" >>confdefs.h
 
 fi
 
-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for obstacks" >&5
-printf %s "checking for obstacks... " >&6; }
+   { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for obstacks that work with any size object" >&5
+printf %s "checking for obstacks that work with any size object... " >&6; }
 if test ${ac_cv_func_obstack+y}
 then :
   printf %s "(cached) " >&6
 else $as_nop
   cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 /* end confdefs.h.  */
-$ac_includes_default
-		      #include "obstack.h"
+#include "obstack.h"
+             void *obstack_chunk_alloc (size_t n) { return 0; }
+             void obstack_chunk_free (void *p) { }
+             /* Check that an internal function returns size_t, not int.  */
+             size_t _obstack_memory_used (struct obstack *);
+
 int
 main (void)
 {
 struct obstack mem;
-		       #define obstack_chunk_alloc malloc
-		       #define obstack_chunk_free free
-		       obstack_init (&mem);
-		       obstack_free (&mem, 0);
+             obstack_init (&mem);
+             obstack_free (&mem, 0);
+
   ;
   return 0;
 }
@@ -71444,18 +71453,18 @@ rm -f core conftest.err conftest.$ac_objext conftest.beam \
 fi
 { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $ac_cv_func_obstack" >&5
 printf "%s\n" "$ac_cv_func_obstack" >&6; }
-if test $ac_cv_func_obstack = yes; then
+   if test "$ac_cv_func_obstack" = yes; then
 
 printf "%s\n" "#define HAVE_OBSTACK 1" >>confdefs.h
 
-else
-  case " $LIBOBJS " in
+   else
+     case " $LIBOBJS " in
   *" obstack.$ac_objext "* ) ;;
   *) LIBOBJS="$LIBOBJS obstack.$ac_objext"
  ;;
 esac
 
-fi
+   fi
 
 ac_fn_c_check_type "$LINENO" "off_t" "ac_cv_type_off_t" "$ac_includes_default"
 if test "x$ac_cv_type_off_t" = xyes
@@ -71527,6 +71536,27 @@ fi
 
 printf "%s\n" "#define HAVE_DECL_SYS_SIGLIST $ac_have_decl" >>confdefs.h
 
+ac_fn_c_check_member "$LINENO" "struct stat" "st_rdev" "ac_cv_member_struct_stat_st_rdev" "$ac_includes_default"
+if test "x$ac_cv_member_struct_stat_st_rdev" = xyes
+then :
+
+printf "%s\n" "#define HAVE_STRUCT_STAT_ST_RDEV 1" >>confdefs.h
+
+
+fi
+
+ac_fn_c_find_uintX_t "$LINENO" "8" "ac_cv_c_uint8_t"
+case $ac_cv_c_uint8_t in #(
+  no|yes) ;; #(
+  *)
+
+printf "%s\n" "#define _UINT8_T 1" >>confdefs.h
+
+
+printf "%s\n" "#define uint8_t $ac_cv_c_uint8_t" >>confdefs.h
+;;
+  esac
+
 ac_fn_c_find_uintX_t "$LINENO" "16" "ac_cv_c_uint16_t"
 case $ac_cv_c_uint16_t in #(
   no|yes) ;; #(
@@ -71558,18 +71588,6 @@ printf "%s\n" "#define _UINT64_T 1" >>confdefs.h
 
 
 printf "%s\n" "#define uint64_t $ac_cv_c_uint64_t" >>confdefs.h
-;;
-  esac
-
-ac_fn_c_find_uintX_t "$LINENO" "8" "ac_cv_c_uint8_t"
-case $ac_cv_c_uint8_t in #(
-  no|yes) ;; #(
-  *)
-
-printf "%s\n" "#define _UINT8_T 1" >>confdefs.h
-
-
-printf "%s\n" "#define uint8_t $ac_cv_c_uint8_t" >>confdefs.h
 ;;
   esac
 

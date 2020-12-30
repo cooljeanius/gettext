@@ -18,14 +18,3 @@ msgstr ""
 
 #: hello-1.pl.in:17 hello-2.pl.in:12
 msgid "Hello, world!"
-msgstr "¡Hola, mundu!"
-
-#: hello-1.pl.in:19
-#, perl-format
-msgid "This program is running as process number %d."
-msgstr "Esti programa ta corriendo como'l procesu númberu %d."
-
-#: hello-2.pl.in:14
-#, perl-brace-format
-msgid "This program is running as process number {pid}."
-msgstr "Esti programa ta corriendo como'l procesu númberu {pid}."

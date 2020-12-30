@@ -53,6 +53,9 @@ while :; do
   esac
 done
 
+echo "This script is broken; FIXME" >&2
+exit 1
+
 # The tests in gettext-tools/tests are not meant to be executable, because
 # they have a TESTS_ENVIRONMENT that specifies the shell explicitly.
 

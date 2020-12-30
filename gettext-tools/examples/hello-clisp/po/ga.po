@@ -22,4 +22,3 @@ msgstr "Dia duit, a dhomhain!"
 #: hello.lisp.in:13
 #, lisp-format
 msgid "This program is running as process number ~D."
-msgstr "Tá an clár seo á rith mar phróiseas ~D."

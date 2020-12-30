@@ -17,9 +17,3 @@ msgstr ""
 
 #: hello.py.in:12
 msgid "Hello, world!"
-msgstr "世界よ, こんにちは!"
-
-#: hello.py.in:13
-#, python-format
-msgid "This program is running as process number %(pid)d."
-msgstr "このプログラムはプロセス番号 %(pid)d で動いています."

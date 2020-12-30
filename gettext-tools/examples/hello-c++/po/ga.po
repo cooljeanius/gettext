@@ -22,4 +22,3 @@ msgstr "Dia duit, a dhomhain!"
 #: hello.cc:40
 #, c-format
 msgid "This program is running as process number %d."
-msgstr "Tá an clár seo á rith mar phróiseas %d."

@@ -22,4 +22,3 @@ msgstr "Dia duit, a dhomhain!"
 #: hello.st.in:32
 #, smalltalk-format
 msgid "This program is running as process number %1."
-msgstr "Tá an clár seo á rith mar phróiseas %1."

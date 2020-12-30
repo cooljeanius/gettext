@@ -17,9 +17,3 @@ msgstr ""
 
 #: hello.cc:45
 msgid "Hello, world!"
-msgstr "世界よ, こんにちは!"
-
-#: hello.cc:52
-#, qt-format
-msgid "This program is running as process number %1."
-msgstr "このプログラムはプロセス番号 %1 で動いています."

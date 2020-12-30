@@ -17,9 +17,3 @@ msgstr ""
 
 #: hello.tcl:13
 msgid "Hello, world!"
-msgstr "世界よ, こんにちは!"
-
-#: hello.tcl:16
-#, tcl-format
-msgid "This program is running as process number %d."
-msgstr "このプログラムはプロセス番号 %d で動いています."

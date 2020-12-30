@@ -22,4 +22,3 @@ msgstr "Dia duit, a dhomhain!"
 #: Hello.java:18
 #, java-format
 msgid "This program is running as process number {0}."
-msgstr "Tá an clár seo á rith mar phróiseas {0}."

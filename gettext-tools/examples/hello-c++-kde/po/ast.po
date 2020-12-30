@@ -26,9 +26,3 @@ msgstr "Exemplu de hola mundu"
 
 #: hellowindow.cc:42
 msgid "Hello, world!"
-msgstr "¡Hola, mundu!"
-
-#: hellowindow.cc:49
-#, qt-format
-msgid "This program is running as process number %1."
-msgstr "Esti programa ta corriendo como'l procesu númberu %1."
