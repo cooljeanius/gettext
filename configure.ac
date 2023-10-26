@@ -1,5 +1,6 @@
 dnl# Configuration for the toplevel directory of GNU gettext
-dnl# Copyright (C) 1995-1999, 2000-2003, 2005-2006, 2009-2010 Free Software Foundation, Inc.
+dnl# Copyright (C) 1995-1999, 2000-2003, 2005-2006, 2009-2010 Free Software
+dnl# Foundation, Inc.
 dnl#
 dnl# This program is free software: you can redistribute it and/or modify
 dnl# it under the terms of the GNU General Public License as published by
@@ -59,9 +60,11 @@ dnl# autoupdate says:
 dnl# The preprocessor macro `STDC_HEADERS' is obsolete.
 dnl# Except in unusual embedded environments, you can safely include all
 dnl# ISO C90 headers unconditionally.
-# Autoupdate added the next two lines to ensure that your configure
-# script's behavior did not change.  They are probably safe to remove.
+dnl# Also:
+dnl# Autoupdate added the next line to ensure that your configure script's
+dnl# behavior did not change:
 AC_CHECK_INCLUDES_DEFAULT
+dnl# Also the macro inside this conditional, but I conditionalized it:
 if test "x${EGREP}" = "x"; then
   test -z "${EGREP}"
   AC_PROG_EGREP
