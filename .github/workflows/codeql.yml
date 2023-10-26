@@ -65,7 +65,7 @@ jobs:
 
     - name: Dependencies
       run: |
-        sudo apt-get update
+        sudo apt-get -q update
         sudo apt-get install gettext
 
     # Autobuild attempts to build any compiled languages (C/C++, C#, Go, Java, or Swift).

@@ -88,9 +88,9 @@ msgid "error after reading %s"
 msgstr "errore dopo la lettura di \"%s\""
 
 #: gnulib-lib/csharpcomp.c:310 gnulib-lib/javaversion.c:76 src/msginit.c:897
-#: src/msginit.c:972 src/msginit.c:1132 src/msginit.c:1231
-#: src/read-csharp.c:72 src/read-java.c:70 src/read-resources.c:73
-#: src/read-tcl.c:110 src/write-resources.c:77
+#: src/msginit.c:972 src/msginit.c:1132 src/msginit.c:1231 src/read-csharp.c:72
+#: src/read-java.c:70 src/read-resources.c:73 src/read-tcl.c:110
+#: src/write-resources.c:77
 #, c-format
 msgid "fdopen() failed"
 msgstr "fdopen() non riuscito"
@@ -599,8 +599,8 @@ msgid ""
 "In the directive number %u, a choice contains a number that is not followed "
 "by '<', '#' or '%s'."
 msgstr ""
-"Nella direttiva numero %u, una scelta contiene un numero non seguito da \"<"
-"\", \"#\" o \"%s\"."
+"Nella direttiva numero %u, una scelta contiene un numero non seguito da "
+"\"<\", \"#\" o \"%s\"."
 
 #: src/format-java.c:745
 #, c-format
@@ -703,8 +703,8 @@ msgstr "le specifiche di formato in \"%s\" e \"%s\" non sono equivalenti"
 #, c-format
 msgid "format specifications in '%s' are not a subset of those in '%s'"
 msgstr ""
-"le specifiche di formato in \"%s\" non sono un sottoinsieme di quelle in \"%s"
-"\""
+"le specifiche di formato in \"%s\" non sono un sottoinsieme di quelle in "
+"\"%s\""
 
 #: src/format-perl.c:433
 #, c-format
@@ -1258,8 +1258,8 @@ msgstr ""
 msgid ""
 "  -n, --add-location          generate '#: filename:line' lines (default)\n"
 msgstr ""
-"  -n, --add-location          genera le righe \"#: nomefile:riga"
-"\" (predefinito)\n"
+"  -n, --add-location          genera le righe \"#: nomefile:"
+"riga\" (predefinito)\n"
 "\n"
 
 #: src/msgattrib.c:499 src/msgcat.c:452 src/msgcomm.c:436 src/msguniq.c:400
@@ -1634,8 +1634,8 @@ msgstr "      --no-location           sopprime le righe \"#: nomefile:riga\"\n"
 msgid ""
 "      --add-location          preserve '#: filename:line' lines (default)\n"
 msgstr ""
-"      --add-location          preserva le righe \"#: nomefile:riga"
-"\" (predefinito)\n"
+"      --add-location          preserva le righe \"#: nomefile:"
+"riga\" (predefinito)\n"
 
 #: src/msgconv.c:364 src/msgen.c:359 src/msgfilter.c:460 src/msggrep.c:607
 #: src/msgmerge.c:585
@@ -2193,13 +2193,12 @@ msgstr "ignorata la voce \"msgstr\" fuzzy"
 msgid "%s: warning: source file contains fuzzy translation"
 msgstr "%s: attenzione: il file sorgente contiene traduzioni fuzzy"
 
-#: src/msggrep.c:258 src/po-lex.c:657 src/read-mo.c:86
-#: src/read-properties.c:89 src/read-stringtable.c:98 src/x-awk.c:139
-#: src/x-c.c:484 src/x-csharp.c:163 src/x-elisp.c:145 src/x-glade.c:616
-#: src/x-java.c:181 src/x-librep.c:147 src/x-lisp.c:212 src/x-perl.c:227
-#: src/x-perl.c:302 src/x-perl.c:395 src/x-php.c:163 src/x-python.c:174
-#: src/x-rst.c:233 src/x-scheme.c:171 src/x-sh.c:155 src/x-smalltalk.c:91
-#: src/x-tcl.c:150 src/x-ycp.c:91
+#: src/msggrep.c:258 src/po-lex.c:657 src/read-mo.c:86 src/read-properties.c:89
+#: src/read-stringtable.c:98 src/x-awk.c:139 src/x-c.c:484 src/x-csharp.c:163
+#: src/x-elisp.c:145 src/x-glade.c:616 src/x-java.c:181 src/x-librep.c:147
+#: src/x-lisp.c:212 src/x-perl.c:227 src/x-perl.c:302 src/x-perl.c:395
+#: src/x-php.c:163 src/x-python.c:174 src/x-rst.c:233 src/x-scheme.c:171
+#: src/x-sh.c:155 src/x-smalltalk.c:91 src/x-tcl.c:150 src/x-ycp.c:91
 #, c-format
 msgid "error while reading \"%s\""
 msgstr "errore durante la lettura di \"%s\""
@@ -2210,8 +2209,8 @@ msgid ""
 "option '%c' cannot be used before 'J' or 'K' or 'T' or 'C' or 'X' has been "
 "specified"
 msgstr ""
-"l'opzione \"%c\" non può essere usata prima di aver specificato \"J\", \"K"
-"\", \"T\", \"C\" o \"X\"."
+"l'opzione \"%c\" non può essere usata prima di aver specificato \"J\", "
+"\"K\", \"T\", \"C\" o \"X\"."
 
 #: src/msggrep.c:516
 #, c-format, no-wrap

@@ -1,7 +1,7 @@
-# serial 21  -*- Autoconf -*-
+# serial 23  -*- Autoconf -*-
 # Enable extensions on systems that normally disable them.
 
-# Copyright (C) 2003, 2006-2020 Free Software Foundation, Inc.
+# Copyright (C) 2003, 2006-2023 Free Software Foundation, Inc.
 # This file is free software; the Free Software Foundation
 # gives unlimited permission to copy and/or distribute it,
 # with or without modifications, as long as this notice is preserved.
@@ -31,7 +31,7 @@ m4_ifndef([AC_CHECK_INCLUDES_DEFAULT],
 #      its dependencies. This will ensure that the gl_USE_SYSTEM_EXTENSIONS
 #      invocation occurs in gl_EARLY, not in gl_INIT.
 
-m4_version_prereq([2.70.1], [], [
+m4_version_prereq([2.72], [], [
 
 # AC_USE_SYSTEM_EXTENSIONS
 # ------------------------
@@ -113,11 +113,15 @@ AH_VERBATIM([USE_SYSTEM_EXTENSIONS],
 #ifndef __STDC_WANT_IEC_60559_DFP_EXT__
 # undef __STDC_WANT_IEC_60559_DFP_EXT__
 #endif
+/* Enable extensions specified by C23 Annex F.  */
+#ifndef __STDC_WANT_IEC_60559_EXT__
+# undef __STDC_WANT_IEC_60559_EXT__
+#endif
 /* Enable extensions specified by ISO/IEC TS 18661-4:2015.  */
 #ifndef __STDC_WANT_IEC_60559_FUNCS_EXT__
 # undef __STDC_WANT_IEC_60559_FUNCS_EXT__
 #endif
-/* Enable extensions specified by ISO/IEC TS 18661-3:2015.  */
+/* Enable extensions specified by C23 Annex H and ISO/IEC TS 18661-3:2015.  */
 #ifndef __STDC_WANT_IEC_60559_TYPES_EXT__
 # undef __STDC_WANT_IEC_60559_TYPES_EXT__
 #endif
@@ -187,6 +191,7 @@ dnl it should only be defined when necessary.
   AC_DEFINE([__STDC_WANT_IEC_60559_ATTRIBS_EXT__])
   AC_DEFINE([__STDC_WANT_IEC_60559_BFP_EXT__])
   AC_DEFINE([__STDC_WANT_IEC_60559_DFP_EXT__])
+  AC_DEFINE([__STDC_WANT_IEC_60559_EXT__])
   AC_DEFINE([__STDC_WANT_IEC_60559_FUNCS_EXT__])
   AC_DEFINE([__STDC_WANT_IEC_60559_TYPES_EXT__])
   AC_DEFINE([__STDC_WANT_LIB_EXT2__])
@@ -212,4 +217,16 @@ dnl it should only be defined when necessary.
 AC_DEFUN_ONCE([gl_USE_SYSTEM_EXTENSIONS],
 [
   AC_REQUIRE([AC_USE_SYSTEM_EXTENSIONS])
+
+  dnl On OpenBSD 6.8 with GCC, the include files contain a couple of
+  dnl definitions that are only activated with an explicit -D_ISOC11_SOURCE.
+  dnl That's because this version of GCC (4.2.1) supports the option
+  dnl '-std=gnu99' but not the option '-std=gnu11'.
+  AC_REQUIRE([AC_CANONICAL_HOST])
+  case "$host_os" in
+    openbsd*)
+      AC_DEFINE([_ISOC11_SOURCE], [1],
+        [Define to enable the declarations of ISO C 11 types and functions.])
+      ;;
+  esac
 ])

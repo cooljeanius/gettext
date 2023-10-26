@@ -54,13 +54,13 @@ while :; do
 done
 
 echo "This script is broken; FIXME" >&2
-exit 1
+if false; then exit 1; fi
 
 # The tests in gettext-tools/tests are not meant to be executable, because
 # they have a TESTS_ENVIRONMENT that specifies the shell explicitly.
 
-if ! $skip_gnulib; then
-  if test -z "$GNULIB_TOOL"; then
+if ! ${skip_gnulib}; then
+  if test -z "${GNULIB_TOOL}"; then
     # Check out gnulib in a subdirectory 'gnulib'.
     if test -d gnulib; then
       (cd gnulib && git pull)
@@ -69,13 +69,13 @@ if ! $skip_gnulib; then
     fi
     # Now it should contain a gnulib-tool.
     if test -f gnulib/gnulib-tool; then
-      GNULIB_TOOL=`pwd`/gnulib/gnulib-tool
+      GNULIB_TOOL=$(pwd)/gnulib/gnulib-tool
     else
       echo "** warning: gnulib-tool not found" 1>&2
     fi
   fi
   # Skip the gnulib-tool step if gnulib-tool was not found.
-  if test -n "$GNULIB_TOOL"; then
+  if test -n "${GNULIB_TOOL}"; then
     # In gettext-runtime:
     GNULIB_MODULES_RUNTIME_FOR_SRC='
       atexit
@@ -105,8 +105,8 @@ if ! $skip_gnulib; then
       java
       javacomp-script
     '
-    $GNULIB_TOOL --dir=gettext-runtime --lib=libgrt --source-base=gnulib-lib --m4-base=gnulib-m4 --no-libtool --local-dir=gnulib-local --local-symlink \
-      --import $GNULIB_MODULES_RUNTIME_FOR_SRC $GNULIB_MODULES_RUNTIME_OTHER
+    ${GNULIB_TOOL} --dir=gettext-runtime --lib=libgrt --source-base=gnulib-lib --m4-base=gnulib-m4 --no-libtool --local-dir=gnulib-local --local-symlink \
+      --import "${GNULIB_MODULES_RUNTIME_FOR_SRC}" "${GNULIB_MODULES_RUNTIME_OTHER}"
     # In gettext-runtime/libasprintf:
     GNULIB_MODULES_LIBASPRINTF='
       alloca
@@ -116,9 +116,9 @@ if ! $skip_gnulib; then
     '
     GNULIB_MODULES_LIBASPRINTF_OTHER='
     '
-    $GNULIB_TOOL --dir=gettext-runtime/libasprintf --source-base=. --m4-base=gnulib-m4 --lgpl=2 --makefile-name=Makefile.gnulib --libtool --local-dir=gnulib-local --local-symlink \
-      --import $GNULIB_MODULES_LIBASPRINTF $GNULIB_MODULES_LIBASPRINTF_OTHER
-    $GNULIB_TOOL --copy-file m4/intmax_t.m4 gettext-runtime/libasprintf/gnulib-m4/intmax_t.m4
+    ${GNULIB_TOOL} --dir=gettext-runtime/libasprintf --source-base=. --m4-base=gnulib-m4 --lgpl=2 --makefile-name=Makefile.gnulib --libtool --local-dir=gnulib-local --local-symlink \
+      --import "${GNULIB_MODULES_LIBASPRINTF}" "${GNULIB_MODULES_LIBASPRINTF_OTHER}"
+    ${GNULIB_TOOL} --copy-file m4/intmax_t.m4 gettext-runtime/libasprintf/gnulib-m4/intmax_t.m4
     # In gettext-tools:
     GNULIB_MODULES_TOOLS_FOR_SRC='
       alloca-opt
@@ -263,15 +263,18 @@ if ! $skip_gnulib; then
       unistr/u8-mbtouc-unsafe-tests
       uniwidth/width-tests
     '
-    $GNULIB_TOOL --dir=gettext-tools --lib=libgettextlib --source-base=gnulib-lib --m4-base=gnulib-m4 --tests-base=gnulib-tests --makefile-name=Makefile.gnulib --libtool --with-tests --local-dir=gnulib-local --local-symlink \
-      --import --avoid=hash-tests `for m in $GNULIB_MODULES_TOOLS_LIBUNISTRING_TESTS; do echo --avoid=$m; done` $GNULIB_MODULES_TOOLS_FOR_SRC $GNULIB_MODULES_TOOLS_FOR_SRC_COMMON_DEPENDENCIES $GNULIB_MODULES_TOOLS_OTHER
+    ${GNULIB_TOOL} --dir=gettext-tools --lib=libgettextlib --source-base=gnulib-lib --m4-base=gnulib-m4 --tests-base=gnulib-tests --makefile-name=Makefile.gnulib --libtool --with-tests --local-dir=gnulib-local --local-symlink \
+      --import --avoid=hash-tests "$(for m in ${GNULIB_MODULES_TOOLS_LIBUNISTRING_TESTS}; do echo --avoid="${m}"; done)" "${GNULIB_MODULES_TOOLS_FOR_SRC}" "${GNULIB_MODULES_TOOLS_FOR_SRC_COMMON_DEPENDENCIES}" "${GNULIB_MODULES_TOOLS_OTHER}"
+	# FIXME: syntax highlighting appears to have gotten screwed up here by all
+	# of the double-quotes I added to pacify shellcheck...
+
     # In gettext-tools/libgrep:
     GNULIB_MODULES_TOOLS_FOR_LIBGREP='
       mbrlen
       regex
     '
-    $GNULIB_TOOL --dir=gettext-tools --macro-prefix=grgl --lib=libgrep --source-base=libgrep --m4-base=libgrep/gnulib-m4 --witness-c-macro=IN_GETTEXT_TOOLS_LIBGREP --makefile-name=Makefile.gnulib --local-dir=gnulib-local --local-symlink \
-      --import `for m in $GNULIB_MODULES_TOOLS_FOR_SRC_COMMON_DEPENDENCIES; do if test \`$GNULIB_TOOL --extract-applicability $m\` != all; then echo --avoid=$m; fi; done` $GNULIB_MODULES_TOOLS_FOR_LIBGREP
+    ${GNULIB_TOOL} --dir=gettext-tools --macro-prefix=grgl --lib=libgrep --source-base=libgrep --m4-base=libgrep/gnulib-m4 --witness-c-macro=IN_GETTEXT_TOOLS_LIBGREP --makefile-name=Makefile.gnulib --local-dir=gnulib-local --local-symlink \
+      --import "$(for m in ${GNULIB_MODULES_TOOLS_FOR_SRC_COMMON_DEPENDENCIES}; do if test "$(${GNULIB_TOOL} --extract-applicability "${m}")" != "all"; then echo --avoid="${m}"; fi; done)" "${GNULIB_MODULES_TOOLS_FOR_LIBGREP}"
     # In gettext-tools/libgettextpo:
     # This is a subset of the GNULIB_MODULES_FOR_SRC.
     GNULIB_MODULES_LIBGETTEXTPO='
@@ -320,32 +323,32 @@ if ! $skip_gnulib; then
     '
     GNULIB_MODULES_LIBGETTEXTPO_OTHER='
     '
-    $GNULIB_TOOL --dir=gettext-tools --source-base=libgettextpo --m4-base=libgettextpo/gnulib-m4 --macro-prefix=gtpo --makefile-name=Makefile.gnulib --libtool --local-dir=gnulib-local --local-symlink \
-      --import $GNULIB_MODULES_LIBGETTEXTPO $GNULIB_MODULES_LIBGETTEXTPO_OTHER
+    ${GNULIB_TOOL} --dir=gettext-tools --source-base=libgettextpo --m4-base=libgettextpo/gnulib-m4 --macro-prefix=gtpo --makefile-name=Makefile.gnulib --libtool --local-dir=gnulib-local --local-symlink \
+      --import "${GNULIB_MODULES_LIBGETTEXTPO}" "${GNULIB_MODULES_LIBGETTEXTPO_OTHER}"
   fi
 fi
 
 # Fetch config.guess, config.sub.
-if test -n "$GNULIB_TOOL"; then
+if test -n "${GNULIB_TOOL}"; then
   for file in config.guess config.sub; do
-    $GNULIB_TOOL --copy-file build-aux/$file; chmod a+x build-aux/$file
+    ${GNULIB_TOOL} --copy-file build-aux/${file}; chmod a+x build-aux/${file}
   done
 else
   for file in config.guess config.sub; do
-    wget -q --timeout=5 -O build-aux/$file.tmp "http://git.savannah.gnu.org/gitweb/?p=gnulib.git;a=blob_plain;f=build-aux/${file};hb=HEAD" \
-      && mv build-aux/$file.tmp build-aux/$file \
-      && chmod a+x build-aux/$file
+    wget -q --timeout=5 -O build-aux/${file}.tmp "http://git.savannah.gnu.org/gitweb/?p=gnulib.git;a=blob_plain;f=build-aux/${file};hb=HEAD" \
+      && mv build-aux/${file}.tmp build-aux/${file} \
+      && chmod a+x build-aux/${file}
   done
 fi
 
-(cd gettext-runtime/libasprintf
+(cd gettext-runtime/libasprintf || return
  ../../build-aux/fixaclocal aclocal -I ../../m4 -I ../m4 -I gnulib-m4
  autoconf
  autoheader && touch config.h.in
  automake --add-missing --copy
 )
 
-(cd gettext-runtime
+(cd gettext-runtime || return
  ../build-aux/fixaclocal aclocal -I m4 -I ../m4 -I gnulib-m4
  autoconf
  autoheader && touch config.h.in
@@ -362,7 +365,7 @@ fi
 
 cp -p gettext-runtime/ABOUT-NLS gettext-tools/ABOUT-NLS
 
-(cd gettext-tools/examples
+(cd gettext-tools/examples || return
  ../../build-aux/fixaclocal aclocal -I ../../gettext-runtime/m4 -I ../../m4
  autoconf
  automake --add-missing --copy
@@ -372,7 +375,7 @@ cp -p gettext-runtime/ABOUT-NLS gettext-tools/ABOUT-NLS
  fi
 )
 
-(cd gettext-tools
+(cd gettext-tools || return
  ../build-aux/fixaclocal aclocal -I m4 -I ../gettext-runtime/m4 -I ../m4 -I gnulib-m4 -I libgrep/gnulib-m4 -I libgettextpo/gnulib-m4
  autoconf
  autoheader && touch config.h.in
@@ -390,6 +393,6 @@ cp -p gettext-runtime/ABOUT-NLS gettext-tools/ABOUT-NLS
  fi
 )
 
-build-aux/fixaclocal aclocal -I m4
+build-aux/fixaclocal aclocal --force -I m4
 autoconf
 automake

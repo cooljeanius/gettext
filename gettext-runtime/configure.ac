@@ -17,7 +17,8 @@ dnl along with this program.  If not, see <http://www.gnu.org/licenses/>.
 dnl Process this file with autoconf to produce a configure script.
 
 AC_PREREQ([2.70])
-AC_INIT([gettext-runtime],[0.18.2])
+AC_INIT([gettext-runtime],[0.18.2],[ueno@gnu.org],[gettext-runtime],
+        [https://www.gnu.org/software/gettext/])
 AC_CONFIG_SRCDIR([intl/dcigettext.c])
 AC_CONFIG_AUX_DIR([../build-aux])
 AC_CONFIG_MACRO_DIR([m4])

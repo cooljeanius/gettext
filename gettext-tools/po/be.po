@@ -14,8 +14,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: gnulib-lib/argmatch.c:133
 #, fuzzy, c-format
@@ -90,9 +90,9 @@ msgid "error after reading %s"
 msgstr "памылка пасля чытаньня \"%s\""
 
 #: gnulib-lib/csharpcomp.c:310 gnulib-lib/javaversion.c:76 src/msginit.c:897
-#: src/msginit.c:972 src/msginit.c:1132 src/msginit.c:1231
-#: src/read-csharp.c:72 src/read-java.c:70 src/read-resources.c:73
-#: src/read-tcl.c:110 src/write-resources.c:77
+#: src/msginit.c:972 src/msginit.c:1132 src/msginit.c:1231 src/read-csharp.c:72
+#: src/read-java.c:70 src/read-resources.c:73 src/read-tcl.c:110
+#: src/write-resources.c:77
 #, c-format
 msgid "fdopen() failed"
 msgstr "fdopen() памылка"
@@ -2056,13 +2056,12 @@ msgstr "недакладнае уваходжаньне `msgstr' прапушч�
 msgid "%s: warning: source file contains fuzzy translation"
 msgstr "%s: увага: ізыходны файл змяшчае недакладны пераклад"
 
-#: src/msggrep.c:258 src/po-lex.c:657 src/read-mo.c:86
-#: src/read-properties.c:89 src/read-stringtable.c:98 src/x-awk.c:139
-#: src/x-c.c:484 src/x-csharp.c:163 src/x-elisp.c:145 src/x-glade.c:616
-#: src/x-java.c:181 src/x-librep.c:147 src/x-lisp.c:212 src/x-perl.c:227
-#: src/x-perl.c:302 src/x-perl.c:395 src/x-php.c:163 src/x-python.c:174
-#: src/x-rst.c:233 src/x-scheme.c:171 src/x-sh.c:155 src/x-smalltalk.c:91
-#: src/x-tcl.c:150 src/x-ycp.c:91
+#: src/msggrep.c:258 src/po-lex.c:657 src/read-mo.c:86 src/read-properties.c:89
+#: src/read-stringtable.c:98 src/x-awk.c:139 src/x-c.c:484 src/x-csharp.c:163
+#: src/x-elisp.c:145 src/x-glade.c:616 src/x-java.c:181 src/x-librep.c:147
+#: src/x-lisp.c:212 src/x-perl.c:227 src/x-perl.c:302 src/x-perl.c:395
+#: src/x-php.c:163 src/x-python.c:174 src/x-rst.c:233 src/x-scheme.c:171
+#: src/x-sh.c:155 src/x-smalltalk.c:91 src/x-tcl.c:150 src/x-ycp.c:91
 #, c-format
 msgid "error while reading \"%s\""
 msgstr "памылка ў час чытаньня \"%s\""

@@ -1,5 +1,5 @@
-# relocatable-lib.m4 serial 6
-dnl Copyright (C) 2003, 2005-2007, 2009-2020 Free Software Foundation, Inc.
+# relocatable-lib.m4 serial 7
+dnl Copyright (C) 2003, 2005-2007, 2009-2023 Free Software Foundation, Inc.
 dnl This file is free software; the Free Software Foundation
 dnl gives unlimited permission to copy and/or distribute it,
 dnl with or without modifications, as long as this notice is preserved.
@@ -34,7 +34,7 @@ AC_DEFUN([gl_RELOCATABLE_NOP],
 [
   AC_MSG_CHECKING([whether to activate relocatable installation])
   AC_ARG_ENABLE([relocatable],
-    [AS_HELP_STRING([--enable-relocatable],
+    [AS_HELP_STRING([[--enable-relocatable]],
       [install a package that can be moved in the file system])],
     [if test "$enableval" != no; then
        RELOCATABLE=yes
