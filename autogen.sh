@@ -43,6 +43,8 @@
 # Usage from a released tarball:             ./autogen.sh --quick --skip-gnulib
 # This does not use a gnulib checkout.
 
+set -x
+
 quick=false
 skip_gnulib=false
 while :; do
@@ -342,17 +344,19 @@ else
 fi
 
 (cd gettext-runtime/libasprintf || return
+ pwd
  ../../build-aux/fixaclocal aclocal -I ../../m4 -I ../m4 -I gnulib-m4
- autoconf
+ autoconf --force
  autoheader && touch config.h.in
- automake --add-missing --copy
+ automake --add-missing --copy --gnits --force-missing
 )
 
 (cd gettext-runtime || return
+ pwd
  ../build-aux/fixaclocal aclocal -I m4 -I ../m4 -I gnulib-m4
- autoconf
+ autoconf --force
  autoheader && touch config.h.in
- automake --add-missing --copy
+ automake --add-missing --copy --gnits --force-missing
  # Rebuilding the PO files and manual pages is only rarely needed.
  if ! $quick; then
    ./configure --disable-java --disable-native-java --disable-csharp \
@@ -366,9 +370,10 @@ fi
 cp -p gettext-runtime/ABOUT-NLS gettext-tools/ABOUT-NLS
 
 (cd gettext-tools/examples || return
- ../../build-aux/fixaclocal aclocal -I ../../gettext-runtime/m4 -I ../../m4
- autoconf
- automake --add-missing --copy
+ pwd
+ ../../build-aux/fixaclocal aclocal --force -I ../../gettext-runtime/m4 -I ../../m4
+ autoconf --force
+ automake --add-missing --copy --gnits --force-missing
  # Rebuilding the examples PO files is only rarely needed.
  if ! $quick; then
    ./configure && (cd po && make update-po) && make distclean
@@ -376,11 +381,12 @@ cp -p gettext-runtime/ABOUT-NLS gettext-tools/ABOUT-NLS
 )
 
 (cd gettext-tools || return
- ../build-aux/fixaclocal aclocal -I m4 -I ../gettext-runtime/m4 -I ../m4 -I gnulib-m4 -I libgrep/gnulib-m4 -I libgettextpo/gnulib-m4
- autoconf
+ pwd
+ ../build-aux/fixaclocal aclocal --force -I m4 -I ../gettext-runtime/m4 -I ../m4 -I gnulib-m4 -I libgrep/gnulib-m4 -I libgettextpo/gnulib-m4
+ autoconf --force
  autoheader && touch config.h.in
  test -d intl || mkdir intl
- automake --add-missing --copy
+ automake --add-missing --copy --gnits --force-missing
  # Rebuilding the PO files, manual pages, documentation, test files is only rarely needed.
  if ! $quick; then
    ./configure --disable-java --disable-native-java --disable-csharp --disable-openmp \
@@ -393,6 +399,6 @@ cp -p gettext-runtime/ABOUT-NLS gettext-tools/ABOUT-NLS
  fi
 )
 
-build-aux/fixaclocal aclocal --force -I m4
-autoconf
-automake
+build-aux/fixaclocal aclocal --force -I m4 --install
+autoconf --force
+automake --copy --gnits --add-missing --force-missing

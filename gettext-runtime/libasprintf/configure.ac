@@ -17,7 +17,8 @@ dnl# along with this program.  If not, see <http://www.gnu.org/licenses/>.
 dnl# Process this file with autoconf to produce a configure script.
 
 AC_PREREQ([2.70])
-AC_INIT([libasprintf],[1.0])
+AC_INIT([libasprintf],[1.0],[ueno@gnu.org],[libasprintf],
+        [https://www.gnu.org/software/gettext/])
 AC_CONFIG_SRCDIR([vasprintf.c])
 AC_CONFIG_AUX_DIR([../../build-aux])
 AC_CONFIG_MACRO_DIR([../../m4])

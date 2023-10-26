@@ -17,7 +17,8 @@ dnl# along with this program.  If not, see <http://www.gnu.org/licenses/>.
 dnl# Process this file with autoconf to produce a configure script.
 
 AC_PREREQ([2.70])
-AC_INIT([gettext],[0.18.2])
+AC_INIT([gettext],[0.18.2],[bug-gnu-gettext@gnu.org],[gettext],
+        [https://www.gnu.org/software/gettext/])
 AC_CONFIG_SRCDIR([gettext-tools/src/msgfmt.c])
 AC_CONFIG_AUX_DIR([build-aux])
 AC_CONFIG_HEADERS([config.h])
